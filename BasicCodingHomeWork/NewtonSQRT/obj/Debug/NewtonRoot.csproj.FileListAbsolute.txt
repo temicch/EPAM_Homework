@@ -1,0 +1,5 @@
+C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\bin\Debug\NewtonSQRT.dll
+C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\bin\Debug\NewtonSQRT.pdb
+C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonRoot.csproj.CoreCompileInputs.cache
+C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.dll
+C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.pdb

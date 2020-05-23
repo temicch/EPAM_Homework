@@ -1,0 +1,56 @@
+﻿<Window x:Class="BasicCodingHomeWork.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BasicCodingHomeWork"
+        mc:Ignorable="d"
+        Title="BasicCodingHomeWork" Height="500" Width="700" MinWidth="700" MinHeight="500" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Grid.Row="0" Header="Nth root by Newton's method" Padding="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <Label Content="Enter the number:" FontSize="18"/>
+                    <TextBox x:Name="NumberTextBox" Margin="5" FontSize="18" Text="0"/>
+                    <Label Content="Enter the root of the number:" FontSize="18"/>
+                    <TextBox x:Name="DegreeTextBox" Margin="5" FontSize="18" Text="0"/>
+                    <Button x:Name="NewtonCalculateButton" Content="Calculate" Width="100" HorizontalAlignment="Left" Margin="0,10,0,0" Click="NewtonCalculateButton_Click" FontSize="18"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" >
+                    <Label Content="Newton Root()" FontSize="18"/>
+                    <TextBox x:Name="NewtonResult" IsReadOnly="True" Margin="5" FontSize="18"/>
+                    <Label Content=".Net Math.Pow(1/n):" Margin="0" FontSize="18" />
+                    <TextBox x:Name="PowResult" Margin="5" IsReadOnly="True" FontSize="18"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Binary view">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical">
+                    <Label Content="Enter the number:" FontSize="18"/>
+                    <TextBox x:Name="BinNumberTextBox" Margin="5" FontSize="18" Text="0"/>
+                    <Button x:Name="BinCalculateButton" Content="Calculate" Width="100" HorizontalAlignment="Left" Margin="0,10,0,0" Click="BinCalculateButton_Click"  FontSize="18"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" >
+                    <Label Content="Binary form (BinFormatter):" FontSize="18"/>
+                    <TextBox x:Name="BinResult" Margin="5" IsReadOnly="True" FontSize="18"/>
+                    <Label Content="Binary form (.Net):" FontSize="18"/>
+                    <TextBox x:Name="BinNetResult" Margin="5" IsReadOnly="True" FontSize="18"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
