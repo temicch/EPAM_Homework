@@ -82,25 +82,13 @@ namespace DeclaringAndCallingMethods
             SeriesCollection = new SeriesCollection();
         }
 
-        public void EuclideGcdWatch(uint cycles, out long time)
+        public void TimeMeter(Func<uint, uint, uint> function, uint cycles, out long time)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();
             for (uint i = 0; i < cycles; i++)
             {
-                Euclidean.Euclidean.Gcd(i, 64);
-            }
-            stopWatch.Stop();
-            time = stopWatch.ElapsedMilliseconds;
-        }
-
-        public void SteinGcdWatch(uint cycles, out long time)
-        {
-            Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();
-            for (uint i = 0; i < cycles; i++)
-            {
-                Euclidean.Stein.Gcd(i, 64);
+                function(i, 64);
             }
             stopWatch.Stop();
             time = stopWatch.ElapsedMilliseconds;
@@ -153,8 +141,8 @@ namespace DeclaringAndCallingMethods
             {
                 uint cyclesCount = uint.Parse(CyclesCount);
 
-                EuclideGcdWatch(cyclesCount, out long euclideTime);
-                SteinGcdWatch(cyclesCount, out long steinTime);
+                TimeMeter(Euclidean.Euclidean.Gcd, cyclesCount, out long euclideTime);
+                TimeMeter(Euclidean.Stein.Gcd, cyclesCount, out long steinTime);
 
                 Brush barColor = null;
 
