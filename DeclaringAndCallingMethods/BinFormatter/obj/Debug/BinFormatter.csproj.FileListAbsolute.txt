@@ -1,0 +1,6 @@
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\bin\Debug\BinFormatter.dll
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\bin\Debug\BinFormatter.pdb
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.csproj.CoreCompileInputs.cache
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.dll
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.pdb
+C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.csprojAssemblyReference.cache
