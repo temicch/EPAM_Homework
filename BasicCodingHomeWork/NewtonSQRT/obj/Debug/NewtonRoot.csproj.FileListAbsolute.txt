@@ -3,3 +3,8 @@ C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\bin\Debug\NewtonSQRT.p
 C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonRoot.csproj.CoreCompileInputs.cache
 C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.dll
 C:\Users\Home\source\repos\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.pdb
+D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\NewtonSQRT\bin\Debug\NewtonSQRT.dll
+D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\NewtonSQRT\bin\Debug\NewtonSQRT.pdb
+D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonRoot.csproj.CoreCompileInputs.cache
+D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.dll
+D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\NewtonSQRT\obj\Debug\NewtonSQRT.pdb
