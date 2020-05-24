@@ -31,7 +31,7 @@ namespace DeclaringAndCallingMethods
             set
             {
                 newtonGcd = value;
-                OnPropertyChanged("NewtonGcd");
+                OnPropertyChanged();
             } 
         }
 
@@ -41,7 +41,7 @@ namespace DeclaringAndCallingMethods
             set
             {
                 steinGcd = value;
-                OnPropertyChanged("SteinGcd");
+                OnPropertyChanged();
             }
         }
 
