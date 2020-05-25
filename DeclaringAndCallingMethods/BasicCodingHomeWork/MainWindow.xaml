@@ -7,13 +7,13 @@
         xmlns:local="clr-namespace:DeclaringAndCallingMethods"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="HomeWork" Height="700" Width="1280" MinWidth="1280" MinHeight="700" WindowStartupLocation="CenterScreen">
+        Title="HomeWork" Height="700" Width="1280" MinWidth="700" MinHeight="700" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="280"/>
+            <RowDefinition Height="250"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <GroupBox Grid.Row="0" Header="GCD" Padding="5">
@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <Label Content="Enter positive integers:" FontSize="18"/>
+                    <Label Content="Enter positive integers:" FontSize="16"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -33,35 +33,35 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Orientation="Vertical">
-                            <Label Content="Number 1:" FontSize="18"/>
-                            <TextBox x:Name="NumberTextBox" Margin="5" FontSize="18" Text="{Binding Number1}"/>
+                            <Label Content="Number 1:" FontSize="16"/>
+                            <TextBox x:Name="NumberTextBox" Margin="5" FontSize="16" Text="{Binding Number1}"/>
                         </StackPanel>
                         <StackPanel Grid.Column="1" Orientation="Vertical">
-                            <Label Content="Number 2:" FontSize="18"/>
-                            <TextBox x:Name="NumberTextBox2" Margin="5" FontSize="18" Text="{Binding Number2}"/>
+                            <Label Content="Number 2:" FontSize="16"/>
+                            <TextBox x:Name="NumberTextBox2" Margin="5" FontSize="16" Text="{Binding Number2}"/>
                         </StackPanel>
                         <StackPanel  Grid.Column="2" Orientation="Vertical">
-                            <Label Content="Number 3:" FontSize="18"/>
-                            <TextBox x:Name="NumberTextBox3" Margin="5" FontSize="18" Text="{Binding Number3}"/>
+                            <Label Content="Number 3:" FontSize="16"/>
+                            <TextBox x:Name="NumberTextBox3" Margin="5" FontSize="16" Text="{Binding Number3}"/>
                         </StackPanel>
                         <StackPanel  Grid.Column="3" Orientation="Vertical">
-                            <Label Content="Number 4:" FontSize="18"/>
-                            <TextBox x:Name="NumberTextBox4" Margin="5" FontSize="18" Text="{Binding Number4}"/>
+                            <Label Content="Number 4:" FontSize="16"/>
+                            <TextBox x:Name="NumberTextBox4" Margin="5" FontSize="16" Text="{Binding Number4}"/>
                         </StackPanel>
                         <StackPanel  Grid.Column="4" Orientation="Vertical">
-                            <Label Content="Number 5:" FontSize="18"/>
-                            <TextBox x:Name="NumberTextBox5" Margin="5" FontSize="18" Text="{Binding Number5}"/>
+                            <Label Content="Number 5:" FontSize="16"/>
+                            <TextBox x:Name="NumberTextBox5" Margin="5" FontSize="16" Text="{Binding Number5}"/>
                         </StackPanel>
                     </Grid>
-                    <Label Content="Enter the count of numbers to calculate:" FontSize="18"/>
-                    <xctk:DecimalUpDown Name="Numeric" Value="{Binding NumberCount}" FontSize="18" Increment="1" Maximum="5" Minimum="2" />
-                    <Button x:Name="NewtonCalculateButton" Content="Calculate" Width="100" HorizontalAlignment="Left" Margin="0,10,0,0" Command="{Binding calculateGcd}" FontSize="18"/>
+                    <Label Content="Enter the count of numbers to calculate:" FontSize="16"/>
+                    <xctk:DecimalUpDown Margin="5" Name="Numeric" Value="{Binding NumberCount}" Width="100" HorizontalAlignment="Left" FontSize="16" Increment="1" Maximum="5" Minimum="2" />
+                    <Button x:Name="NewtonCalculateButton" Content="Calculate" Width="100" Height="40" HorizontalAlignment="Left" Margin="5" Command="{Binding calculateGcd}" FontSize="16"/>
                 </StackPanel>
-                <StackPanel Grid.Column="1" Margin="30" Orientation="Vertical">
-                    <Label Content="Newton Gcd()" FontSize="18"/>
-                    <TextBox x:Name="NewtonResult" IsReadOnly="True" Margin="5" FontSize="18" Text="{Binding NewtonGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Label Content="Stein improved Gcd():" Margin="0" FontSize="18" />
-                    <TextBox x:Name="SteinResult" Margin="5" IsReadOnly="True" FontSize="18" Text="{Binding SteinGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <StackPanel Grid.Column="1" Margin="30" HorizontalAlignment="Center" Orientation="Vertical">
+                    <Label Content="Newton Gcd()" HorizontalAlignment="Center" FontSize="16"/>
+                    <TextBox x:Name="NewtonResult" IsReadOnly="True" Width="100"  Margin="5" FontSize="16" Text="{Binding NewtonGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="Stein improved Gcd():" HorizontalAlignment="Center" Margin="0" FontSize="16" />
+                    <TextBox x:Name="SteinResult" Margin="5" Width="100" HorizontalAlignment="Center" IsReadOnly="True" FontSize="16" Text="{Binding SteinGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
             </Grid>
         </GroupBox>
@@ -72,8 +72,8 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <Label Content="Count of cycles:" FontSize="18"/>
-                    <TextBox x:Name="CyclesCount" Margin="5" FontSize="18" Text="{Binding CyclesCount}"/>
+                    <Label Content="Count of cycles:" FontSize="16"/>
+                    <TextBox x:Name="CyclesCount" Margin="5" FontSize="16" Text="{Binding CyclesCount}"/>
                     <CheckBox x:Name="IsHorizontal" Margin="10" Content="Is horizontal" IsChecked="{Binding IsHorizontal}">
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
@@ -94,15 +94,15 @@
                             <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
                         </RadioButton.LayoutTransform>
                     </RadioButton>
-                    <Button x:Name="ButtonRunCycles" Content="Run" Height="40" Margin="10" FontSize="18" Command="{Binding calculateWatchers}"/>
+                    <Button x:Name="ButtonRunCycles" Content="Run" Height="40" Margin="5" FontSize="16" Command="{Binding calculateWatchers}"/>
                 </StackPanel>
                 <Grid x:Name="WatcherGrid" Grid.Column="1">
                     <lvc:CartesianChart Name="Chart" LegendLocation="Top" Series="{Binding SeriesCollection}">
                         <lvc:CartesianChart.AxisY>
-                            <lvc:Axis Title="Time (Ms)" FontSize="18" ></lvc:Axis>
+                            <lvc:Axis Title="Time (Ms)" FontSize="16" ></lvc:Axis>
                         </lvc:CartesianChart.AxisY>
                         <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Title="Time (Ms)" FontSize="18" ></lvc:Axis>
+                            <lvc:Axis Title="Time (Ms)" FontSize="16" ></lvc:Axis>
                         </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
                 </Grid>

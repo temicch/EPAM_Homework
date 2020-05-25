@@ -15,11 +15,11 @@ namespace DeclaringAndCallingMethods
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Number1 { get; set; } = "0";
-        public string Number2 { get; set; } = "0";
-        public string Number3 { get; set; } = "0";
-        public string Number4 { get; set; } = "0";
-        public string Number5 { get; set; } = "0";
+        public string Number1 { get; set; } = "18";
+        public string Number2 { get; set; } = "9";
+        public string Number3 { get; set; } = "36";
+        public string Number4 { get; set; } = "72";
+        public string Number5 { get; set; } = "144";
 
         public string NumberCount { get; set; } = "2";
 
@@ -45,7 +45,7 @@ namespace DeclaringAndCallingMethods
             }
         }
 
-        public string CyclesCount { get; set; } = "10000";
+        public string CyclesCount { get; set; } = "100000";
 
         public bool IsHorizontal { get; set; }
 
@@ -170,8 +170,8 @@ namespace DeclaringAndCallingMethods
 
             object[][] values = new[]
             {
-                new object[]{ "Euclide", new ChartValues<long> { euclideTime }, color },
-                new object[]{ "Stein", new ChartValues<long> { steinTime }, steinColor }
+                new object[]{ "Classic Euclide algorithm", new ChartValues<long> { euclideTime }, color },
+                new object[]{ "Stein algorithm", new ChartValues<long> { steinTime }, steinColor }
             };
 
             SeriesCollection.Clear();
