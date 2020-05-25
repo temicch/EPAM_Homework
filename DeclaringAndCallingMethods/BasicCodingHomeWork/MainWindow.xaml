@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:DeclaringAndCallingMethods"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="HomeWork" Height="700" Width="1280" MinWidth="700" MinHeight="700" WindowStartupLocation="CenterScreen">
+        Title="HomeWork" Height="580" Width="900" MinWidth="900" MinHeight="580" WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <local:MainWindowViewModel />
     </Window.DataContext>
@@ -19,7 +19,7 @@
         <GroupBox Grid.Row="0" Header="GCD" Padding="5">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="600"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
