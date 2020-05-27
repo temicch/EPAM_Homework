@@ -1,5 +1,0 @@
-D:\Users\Home\Desktop\EPAM_HomeWork\DeclaringAndCallingMethods\BinFormatter\bin\Debug\BinFormatter.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\DeclaringAndCallingMethods\BinFormatter\bin\Debug\BinFormatter.pdb
-D:\Users\Home\Desktop\EPAM_HomeWork\DeclaringAndCallingMethods\BinFormatter\obj\Debug\Euclidean.csproj.CoreCompileInputs.cache
-D:\Users\Home\Desktop\EPAM_HomeWork\DeclaringAndCallingMethods\BinFormatter\obj\Debug\BinFormatter.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\DeclaringAndCallingMethods\BinFormatter\obj\Debug\BinFormatter.pdb

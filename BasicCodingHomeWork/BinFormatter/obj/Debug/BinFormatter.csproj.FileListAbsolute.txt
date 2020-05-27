@@ -4,8 +4,3 @@ C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatt
 C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.dll
 C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.pdb
 C:\Users\Home\source\repos\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.csprojAssemblyReference.cache
-D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\BinFormatter\bin\Debug\BinFormatter.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\BinFormatter\bin\Debug\BinFormatter.pdb
-D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.csproj.CoreCompileInputs.cache
-D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\BasicCodingHomeWork\BinFormatter\obj\Debug\BinFormatter.pdb

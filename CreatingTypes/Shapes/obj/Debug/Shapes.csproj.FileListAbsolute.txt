@@ -1,6 +1,0 @@
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\bin\Debug\Shapes.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\bin\Debug\Shapes.pdb
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\obj\Debug\Shapes.csproj.CoreCompileInputs.cache
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\obj\Debug\Shapes.dll
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\obj\Debug\Shapes.pdb
-D:\Users\Home\Desktop\EPAM_HomeWork\CreatingTypes\Shapes\obj\Debug\Shapes.csprojAssemblyReference.cache
