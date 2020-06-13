@@ -1,0 +1,34 @@
+﻿<mah:MetroWindow x:Class="MainProgram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:vms="clr-namespace:MainProgram.ViewModels"
+        mc:Ignorable="d"
+        SaveWindowPosition="True"
+        Title="HomeWork" Height="720" MinHeight="220" Width="1280" MinWidth="580" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vms:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Grid.Column="0" ItemsSource="{Binding ViewsList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button Margin="8" MinHeight="40" Width="240" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBox}}, Path=DataContext.OpenViewCommand}" CommandParameter="{Binding}">
+                        <TextBlock Text="{Binding}" HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <GridSplitter Grid.Column="1"/>
+        <Grid x:Name="MainGrid" Grid.Column="2">
+            
+        </Grid>
+    </Grid>
+</mah:MetroWindow>

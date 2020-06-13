@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="MainProgram.Views.Task_04View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:vms="clr-namespace:MainProgram.ViewModels"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vms:Task_04ViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Header="GCD" Padding="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="600"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <Label Content="Enter positive integers:"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" Orientation="Vertical">
+                                <Label Content="Number 1:" />
+                                <TextBox x:Name="NumberTextBox" Margin="5" Text="{Binding Number1}"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Orientation="Vertical">
+                                <Label Content="Number 2:" />
+                                <TextBox x:Name="NumberTextBox2" Margin="5"  Text="{Binding Number2}"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Column="2" Orientation="Vertical">
+                                <Label Content="Number 3:" />
+                                <TextBox x:Name="NumberTextBox3" Margin="5" Text="{Binding Number3}"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Column="3" Orientation="Vertical">
+                                <Label Content="Number 4:" />
+                                <TextBox x:Name="NumberTextBox4" Margin="5"  Text="{Binding Number4}"/>
+                            </StackPanel>
+                            <StackPanel  Grid.Column="4" Orientation="Vertical">
+                                <Label Content="Number 5:" />
+                                <TextBox x:Name="NumberTextBox5" Margin="5"  Text="{Binding Number5}"/>
+                            </StackPanel>
+                        </Grid>
+                        <Label Content="Enter the count of numbers to calculate:" />
+                        <mah:NumericUpDown Margin="5" Name="Numeric" Value="{Binding NumberCount}" Width="100" HorizontalAlignment="Left" Maximum="5" Minimum="2" />
+                        <Button x:Name="NewtonCalculateButton" Content="Calculate" HorizontalAlignment="Left" Margin="5" Command="{Binding calculateGcd}" />
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="30" HorizontalAlignment="Center" Orientation="Vertical">
+                        <Label Content="Newton Gcd()" HorizontalAlignment="Center" />
+                        <TextBox x:Name="NewtonResult" IsReadOnly="True" Width="100"  Margin="5" Text="{Binding NewtonGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Content="Stein improved Gcd():" HorizontalAlignment="Center" Margin="0" />
+                        <TextBox x:Name="SteinResult" Margin="5" Width="100" HorizontalAlignment="Center" IsReadOnly="True" Text="{Binding SteinGcd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </StackPanel>
+                </Grid>
+            </GroupBox>
+            <GroupBox Grid.Row="1" Header="Bar chart">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Vertical">
+                        <Label Content="Count of cycles:" />
+                        <TextBox x:Name="CyclesCount" Margin="5"  Text="{Binding CyclesCount}"/>
+                        <CheckBox x:Name="IsHorizontal" Margin="10" Content="Is horizontal" IsChecked="{Binding IsHorizontal}">
+                            <CheckBox.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                            </CheckBox.LayoutTransform>
+                        </CheckBox>
+                        <RadioButton x:Name="GreenRadio" GroupName="RadioColors" Margin="10" Content="Green color" IsChecked="{Binding GreenRadio}">
+                            <RadioButton.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                            </RadioButton.LayoutTransform>
+                        </RadioButton>
+                        <RadioButton x:Name="RedRadio" GroupName="RadioColors" Margin="10,0,10,10" Content="Red color" IsChecked="{Binding RedRadio}">
+                            <RadioButton.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                            </RadioButton.LayoutTransform>
+                        </RadioButton>
+                        <RadioButton x:Name="BlueRadio" GroupName="RadioColors" Margin="10,0,10,10" Content="Blue color" IsChecked="{Binding BlueRadio}">
+                            <RadioButton.LayoutTransform>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
+                            </RadioButton.LayoutTransform>
+                        </RadioButton>
+                        <Button x:Name="ButtonRunCycles" Content="Run" Margin="5" Command="{Binding calculateWatchers}"/>
+                    </StackPanel>
+                    <Grid x:Name="WatcherGrid" Grid.Column="1">
+                        <lvc:CartesianChart Name="Chart" LegendLocation="Top" Series="{Binding SeriesCollection}">
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis Title="Time (Ms)" ></lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis Title="Time (Ms)" ></lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                        </lvc:CartesianChart>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Grid>
+    </Grid>
+</UserControl>
