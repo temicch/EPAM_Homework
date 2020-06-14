@@ -71,7 +71,7 @@ namespace Vector
 
         public static Vector3D operator -(Vector3D v1, Vector3D v2)
         {
-            return v1 - v2;
+            return v1 + (-v2);
         }
 
         public static Vector3D operator *(Vector3D v, double d)
