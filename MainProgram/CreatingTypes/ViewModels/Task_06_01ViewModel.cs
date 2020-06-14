@@ -6,7 +6,7 @@ using Vector;
 
 namespace MainProgram.ViewModels
 {
-    class Task_06ViewModel: BaseViewModel
+    class Task_06_01ViewModel: BaseViewModel
     {
         public double X1 { get; set; } = 1;
         public double Y1 { get; set; } = 2;
@@ -25,7 +25,7 @@ namespace MainProgram.ViewModels
 
         public BasicCommand CalculateCommand { get; set; }
 
-        public Task_06ViewModel()
+        public Task_06_01ViewModel()
         {
             CalculateCommand = new BasicCommand((obj) => Calculate(obj));
         }
@@ -40,10 +40,7 @@ namespace MainProgram.ViewModels
                 Vector1 = VectorInfo(vector1, D1);
                 Vector2 = VectorInfo(vector2, D2);
 
-                Output =    $"{vector1} + {vector2} = {vector1 + vector2}\n";
-                Output +=   $"{vector1} - {vector2} = {vector1 - vector2}\n\n";
-                Output +=   $"The angle between the vectors: {Vector3D.Angle(vector1, vector2)}\n";
-                Output +=   $"Scalar product of vectors: {Vector3D.ScalarProduct(vector1, vector2)}";
+                Output = OutputInfo(vector1, vector2);
 
                 OnPropertyChanged(nameof(Vector1));
                 OnPropertyChanged(nameof(Vector2));
@@ -53,6 +50,17 @@ namespace MainProgram.ViewModels
             {
                 MessageBox.Show(exception.Message);
             }
+
+        }
+
+        private string OutputInfo(Vector3D vector1, Vector3D vector2)
+        {
+            StringBuilder output = new StringBuilder();
+            output.Append($"{vector1} + {vector2} = {vector1 + vector2}\n");
+            output.Append($"{vector1} - {vector2} = {vector1 - vector2}\n\n");
+            output.Append($"The angle between the vectors: {Vector3D.Angle(vector1, vector2)}\n");
+            output.Append($"Scalar product of vectors: {Vector3D.ScalarProduct(vector1, vector2)}");
+            return output.ToString();
         }
 
         private string VectorInfo(Vector3D vector, double D)

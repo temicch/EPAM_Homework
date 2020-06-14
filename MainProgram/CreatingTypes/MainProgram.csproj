@@ -104,7 +104,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Task_06View.xaml">
+    <Page Include="Views\Task_06_01View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,7 +118,7 @@
     </Compile>
     <Compile Include="ViewModels\Task_03ViewModel.cs" />
     <Compile Include="ViewModels\Task_04ViewModel.cs" />
-    <Compile Include="ViewModels\Task_06ViewModel.cs" />
+    <Compile Include="ViewModels\Task_06_01ViewModel.cs" />
     <Compile Include="ViewModels\Task_05ViewModel.cs" />
     <Compile Include="Views\Task_03View.xaml.cs">
       <DependentUpon>Task_03View.xaml</DependentUpon>
@@ -129,8 +129,8 @@
     <Compile Include="Views\Task_05View.xaml.cs">
       <DependentUpon>Task_05View.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Task_06View.xaml.cs">
-      <DependentUpon>Task_06View.xaml</DependentUpon>
+    <Compile Include="Views\Task_06_01View.xaml.cs">
+      <DependentUpon>Task_06_01View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
