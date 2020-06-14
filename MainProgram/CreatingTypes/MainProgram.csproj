@@ -92,6 +92,10 @@
     <Compile Include="Utility\BaseViewModel.cs" />
     <Compile Include="Utility\BasicCommand.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Task_06_02ViewModel.cs" />
+    <Compile Include="Views\Task_06_02View.xaml.cs">
+      <DependentUpon>Task_06_02View.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -136,6 +140,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Task_06_02View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -180,6 +188,10 @@
     <ProjectReference Include="..\Models\NewtonSQRT\NewtonRoot.csproj">
       <Project>{2a005751-4ffc-46a3-8e20-6d2e62fb7143}</Project>
       <Name>NewtonRoot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Polynomial\Polynomial.csproj">
+      <Project>{81b403b6-26dd-4a02-a64e-2a5da781bedc}</Project>
+      <Name>Polynomial</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Vector3D\3DVector.csproj">
       <Project>{b8d580ef-1daa-462c-8238-24cebad86034}</Project>

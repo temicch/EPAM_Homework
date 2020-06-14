@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes_tests", "Tests\Test_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyShapes", "Models\MyShapes\MyShapes.csproj", "{1B36A88E-3C73-480B-AA45-FEBB575E9079}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polynomial", "Models\Polynomial\Polynomial.csproj", "{81B403B6-26DD-4A02-A64E-2A5DA781BEDC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{1B36A88E-3C73-480B-AA45-FEBB575E9079}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B36A88E-3C73-480B-AA45-FEBB575E9079}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B36A88E-3C73-480B-AA45-FEBB575E9079}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81B403B6-26DD-4A02-A64E-2A5DA781BEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B403B6-26DD-4A02-A64E-2A5DA781BEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B403B6-26DD-4A02-A64E-2A5DA781BEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B403B6-26DD-4A02-A64E-2A5DA781BEDC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -108,6 +114,7 @@ Global
 		{2E813256-586A-4BB6-8959-5900885A03F8} = {13CB51BE-575D-4706-9970-E1C71B4648EC}
 		{9AE5F4BC-6C34-4C64-8699-85E84DED5907} = {2E813256-586A-4BB6-8959-5900885A03F8}
 		{1B36A88E-3C73-480B-AA45-FEBB575E9079} = {E81BCECA-E293-4E08-93FF-1B9FA6330178}
+		{81B403B6-26DD-4A02-A64E-2A5DA781BEDC} = {B5D2CEB2-6758-4360-AEFC-AB74433A1BF0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD76A27B-B598-4EA4-9F37-78E581460016}

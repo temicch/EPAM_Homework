@@ -33,7 +33,7 @@ namespace MainProgram.ViewModels
             views["04 Declaring and calling methods in C #"] = new Task_04View();
             views["05 Creating New Types in C #"] = new Task_05View();
             views["06 (01) Encapsulation. Overload operations. Inheritance. Interfaces and Abstract Classes"] = new Task_06_01View();
-            views["06 (02) Encapsulation. Overload operations. Inheritance. Interfaces and Abstract Classes"] = null;
+            views["06 (02) Encapsulation. Overload operations. Inheritance. Interfaces and Abstract Classes"] = new Task_06_02View();
             views["07 Exception Handling"] = null;
             views["08 Delegates and Events"] = null;
             views["09 Collections and Generic Types"] = null;
