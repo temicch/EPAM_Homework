@@ -118,6 +118,7 @@
     </Compile>
     <Compile Include="ViewModels\Task_03ViewModel.cs" />
     <Compile Include="ViewModels\Task_04ViewModel.cs" />
+    <Compile Include="ViewModels\Task_06ViewModel.cs" />
     <Compile Include="ViewModels\Task_05ViewModel.cs" />
     <Compile Include="Views\Task_03View.xaml.cs">
       <DependentUpon>Task_03View.xaml</DependentUpon>
