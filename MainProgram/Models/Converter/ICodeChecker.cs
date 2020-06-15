@@ -3,7 +3,7 @@
     public interface ICodeChecker
     {
         /// <summary>
-        /// This method checks if the specified string is a code block of the specified language
+        ///     This method checks if the specified string is a code block of the specified language
         /// </summary>
         /// <param name="code">Code block</param>
         /// <param name="type">Language used</param>

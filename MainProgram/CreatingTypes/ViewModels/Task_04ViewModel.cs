@@ -1,16 +1,28 @@
-﻿using LiveCharts;
-using LiveCharts.Wpf;
-using MainProgram.Utility;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using Euclidean;
+using LiveCharts;
+using LiveCharts.Wpf;
+using MainProgram.Utility;
 
 namespace MainProgram.ViewModels
 {
-    class Task_04ViewModel: BaseViewModel
+    internal class Task_04ViewModel : BaseViewModel
     {
+        private BasicCommand _calculateGcd;
+        private BasicCommand _calculateWatchers;
+
+        private string newtonGcd = "0";
+        private string steinGcd = "0";
+
+        public Task_04ViewModel()
+        {
+            SeriesCollection = new SeriesCollection();
+        }
+
         public string Number1 { get; set; } = "18";
         public string Number2 { get; set; } = "9";
         public string Number3 { get; set; } = "36";
@@ -18,9 +30,6 @@ namespace MainProgram.ViewModels
         public string Number5 { get; set; } = "144";
 
         public string NumberCount { get; set; } = "2";
-
-        private string newtonGcd = "0";
-        private string steinGcd = "0";
 
         public string NewtonGcd
         {
@@ -52,9 +61,6 @@ namespace MainProgram.ViewModels
 
         public SeriesCollection SeriesCollection { get; set; }
 
-        BasicCommand _calculateGcd;
-        BasicCommand _calculateWatchers;
-
         public ICommand calculateGcd
         {
             get
@@ -64,21 +70,15 @@ namespace MainProgram.ViewModels
                 return _calculateGcd;
             }
         }
-        public ICommand calculateWatchers => _calculateWatchers ?? (_calculateWatchers = new BasicCommand(CalculateWatchers));
 
-        public Task_04ViewModel()
-        {
-            SeriesCollection = new SeriesCollection();
-        }
+        public ICommand calculateWatchers =>
+            _calculateWatchers ?? (_calculateWatchers = new BasicCommand(CalculateWatchers));
 
         public void TimeMeter(Func<uint, uint, uint> function, uint cycles, out long time)
         {
-            Stopwatch stopWatch = new Stopwatch();
+            var stopWatch = new Stopwatch();
             stopWatch.Start();
-            for (uint i = 0; i < cycles; i++)
-            {
-                function(i, 64);
-            }
+            for (uint i = 0; i < cycles; i++) function(i, 64);
             stopWatch.Stop();
             time = stopWatch.ElapsedMilliseconds;
         }
@@ -87,27 +87,27 @@ namespace MainProgram.ViewModels
         {
             try
             {
-                int count = int.Parse(NumberCount);
+                var count = int.Parse(NumberCount);
                 uint num1, num2, num3, num4, num5;
                 num1 = uint.Parse(Number1);
                 num2 = uint.Parse(Number2);
                 if (count == 2)
                 {
                     NewtonGcd = Euclidean.Euclidean.Gcd(num1, num2).ToString();
-                    SteinGcd = Euclidean.Stein.Gcd(num1, num2).ToString();
+                    SteinGcd = Stein.Gcd(num1, num2).ToString();
                 }
                 else if (count == 3)
                 {
                     num3 = uint.Parse(Number3);
                     NewtonGcd = Euclidean.Euclidean.Gcd3(num1, num2, num3).ToString();
-                    SteinGcd = Euclidean.Stein.Gcd3(num1, num2, num3).ToString();
+                    SteinGcd = Stein.Gcd3(num1, num2, num3).ToString();
                 }
                 else if (count == 4)
                 {
                     num3 = uint.Parse(Number3);
                     num4 = uint.Parse(Number4);
                     NewtonGcd = Euclidean.Euclidean.Gcd4(num1, num2, num3, num4).ToString();
-                    SteinGcd = Euclidean.Stein.Gcd4(num1, num2, num3, num4).ToString();
+                    SteinGcd = Stein.Gcd4(num1, num2, num3, num4).ToString();
                 }
                 else if (count == 5)
                 {
@@ -115,7 +115,7 @@ namespace MainProgram.ViewModels
                     num4 = uint.Parse(Number4);
                     num5 = uint.Parse(Number5);
                     NewtonGcd = Euclidean.Euclidean.Gcd5(num1, num2, num3, num4, num5).ToString();
-                    SteinGcd = Euclidean.Stein.Gcd5(num1, num2, num3, num4, num5).ToString();
+                    SteinGcd = Stein.Gcd5(num1, num2, num3, num4, num5).ToString();
                 }
             }
             catch (Exception exception)
@@ -128,18 +128,18 @@ namespace MainProgram.ViewModels
         {
             try
             {
-                uint cyclesCount = uint.Parse(CyclesCount);
+                var cyclesCount = uint.Parse(CyclesCount);
 
-                TimeMeter(Euclidean.Euclidean.Gcd, cyclesCount, out long euclideTime);
-                TimeMeter(Euclidean.Stein.Gcd, cyclesCount, out long steinTime);
+                TimeMeter(Euclidean.Euclidean.Gcd, cyclesCount, out var euclideTime);
+                TimeMeter(Stein.Gcd, cyclesCount, out var steinTime);
 
                 Brush barColor = null;
 
-                if (RedRadio == true)
+                if (RedRadio)
                     barColor = Brushes.Red;
-                else if (GreenRadio == true)
+                else if (GreenRadio)
                     barColor = Brushes.Green;
-                else if (BlueRadio == true)
+                else if (BlueRadio)
                     barColor = Brushes.Blue;
 
                 CreateChart(euclideTime, steinTime, isHorisontal: !IsHorizontal, color: barColor);
@@ -149,18 +149,19 @@ namespace MainProgram.ViewModels
                 MessageBox.Show(exception.Message);
             }
         }
-        void CreateChart(long euclideTime, long steinTime, Brush color = null, bool? isHorisontal = true)
+
+        private void CreateChart(long euclideTime, long steinTime, Brush color = null, bool? isHorisontal = true)
         {
             if (color == null)
                 color = Brushes.DarkGreen;
 
-            Brush steinColor = color.Clone();
+            var steinColor = color.Clone();
             steinColor.Opacity = 0.5;
 
-            object[][] values = new[]
+            object[][] values =
             {
-                new object[]{ "Classic Euclide algorithm", new ChartValues<long> { euclideTime }, color },
-                new object[]{ "Stein algorithm", new ChartValues<long> { steinTime }, steinColor }
+                new object[] {"Classic Euclide algorithm", new ChartValues<long> {euclideTime}, color},
+                new object[] {"Stein algorithm", new ChartValues<long> {steinTime}, steinColor}
             };
 
             SeriesCollection.Clear();
@@ -173,7 +174,7 @@ namespace MainProgram.ViewModels
                 else
                     series = new RowSeries();
                 series.Title = array[0] as string;
-                ChartValues<long> vs = (ChartValues<long>)array[1];
+                var vs = (ChartValues<long>) array[1];
                 series.Values = vs;
                 series.Fill = array[2] as Brush;
 

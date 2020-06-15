@@ -1,13 +1,18 @@
-﻿using MainProgram.Utility;
-using System;
+﻿using System;
 using System.Text;
 using System.Windows;
+using MainProgram.Utility;
 using Vector;
 
 namespace MainProgram.ViewModels
 {
-    class Task_06_01ViewModel: BaseViewModel
+    internal class Task_06_01ViewModel : BaseViewModel
     {
+        public Task_06_01ViewModel()
+        {
+            CalculateCommand = new BasicCommand(obj => Calculate(obj));
+        }
+
         public double X1 { get; set; } = 1;
         public double Y1 { get; set; } = 2;
         public double Z1 { get; set; } = 3;
@@ -20,15 +25,10 @@ namespace MainProgram.ViewModels
 
         public string Vector1 { get; set; }
         public string Vector2 { get; set; }
-               
+
         public string Output { get; set; }
 
         public BasicCommand CalculateCommand { get; set; }
-
-        public Task_06_01ViewModel()
-        {
-            CalculateCommand = new BasicCommand((obj) => Calculate(obj));
-        }
 
         public void Calculate(object obj)
         {
@@ -50,12 +50,11 @@ namespace MainProgram.ViewModels
             {
                 MessageBox.Show(exception.Message);
             }
-
         }
 
         private string OutputInfo(Vector3D vector1, Vector3D vector2)
         {
-            StringBuilder output = new StringBuilder();
+            var output = new StringBuilder();
             output.Append($"{vector1} + {vector2} = {vector1 + vector2}\n");
             output.Append($"{vector1} - {vector2} = {vector1 - vector2}\n\n");
             output.Append($"The angle between the vectors: {Vector3D.Angle(vector1, vector2)}\n");
@@ -65,7 +64,7 @@ namespace MainProgram.ViewModels
 
         private string VectorInfo(Vector3D vector, double D)
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             result.Append($"Vector {vector}\nLength = {vector.Length}\n\n");
             result.Append($"{vector} / {D} = {vector / D}\n");
             result.Append($"{D} / {vector} = {D / vector}\n");

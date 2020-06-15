@@ -1,19 +1,20 @@
-﻿using MainProgram.Utility;
-using MyShapes;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Input;
+using MainProgram.Utility;
+using MyShapes;
 
 namespace MainProgram.ViewModels
 {
-    class Task_05ViewModel: BaseViewModel
+    internal class Task_05ViewModel : BaseViewModel
     {
-        public string ASide { get; set; } = "2";
-        public string BSide { get; set; } = "2";
-        public string CSide { get; set; } = "2";
+        private BasicCommand _calculate;
 
         private string area = "0";
         private string perimeter = "0";
+        public string ASide { get; set; } = "2";
+        public string BSide { get; set; } = "2";
+        public string CSide { get; set; } = "2";
 
         public string Area
         {
@@ -35,8 +36,6 @@ namespace MainProgram.ViewModels
             }
         }
 
-        BasicCommand _calculate;
-
         public ICommand calculate
         {
             get
@@ -51,12 +50,12 @@ namespace MainProgram.ViewModels
         {
             try
             {
-                string valueFormatter = "{0:0.##}";
+                var valueFormatter = "{0:0.##}";
                 double a, b, c;
                 a = double.Parse(ASide);
                 b = double.Parse(BSide);
                 c = double.Parse(CSide);
-                Triangle triangle = new Triangle(a, b, c);
+                var triangle = new Triangle(a, b, c);
                 Perimeter = triangle.GetPerimeter().ToString();
                 Area = string.Format(valueFormatter, triangle.GetArea());
             }

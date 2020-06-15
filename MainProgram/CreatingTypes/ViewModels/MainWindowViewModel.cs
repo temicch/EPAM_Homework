@@ -1,27 +1,27 @@
-﻿using MainProgram.Utility;
-using MainProgram.Views;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using MainProgram.Utility;
+using MainProgram.Views;
 
 namespace MainProgram.ViewModels
 {
-    class MainWindowViewModel : BaseViewModel
+    internal class MainWindowViewModel : BaseViewModel
     {
-        readonly MainWindow window = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+        private readonly MainWindow window = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
 
-        Dictionary<string, ContentControl> views;
-
-        public List<string> ViewsList => views.Select(x => x.Key).Distinct().ToList();
-
-        public BasicCommand OpenViewCommand { get; set; }
+        private Dictionary<string, ContentControl> views;
 
         public MainWindowViewModel()
         {
             OpenViewCommand = new BasicCommand(OpenView);
             InitViewModels();
         }
+
+        public List<string> ViewsList => views.Select(x => x.Key).Distinct().ToList();
+
+        public BasicCommand OpenViewCommand { get; set; }
 
         private void InitViewModels()
         {
@@ -60,13 +60,14 @@ namespace MainProgram.ViewModels
 
         private void OpenView(object obj)
         {
-            string viewName = (string)obj;
+            var viewName = (string) obj;
             UIElement view = views[viewName];
             if (view == null)
             {
                 MessageBox.Show("This task is not implemented yet");
                 return;
             }
+
             window.MainGrid.Children.Clear();
             window.MainGrid.Children.Add(view);
         }

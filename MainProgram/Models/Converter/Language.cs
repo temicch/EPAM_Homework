@@ -3,11 +3,12 @@
     public enum Language
     {
         /// <summary>
-        /// C# code
+        ///     C# code
         /// </summary>
         CSharp_Code,
+
         /// <summary>
-        /// VisualBasic code
+        ///     VisualBasic code
         /// </summary>
         VB_Code
     }

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="MainProgram.Views.Task_05View"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vms="clr-namespace:MainProgram.ViewModels"
              mc:Ignorable="d">
@@ -13,34 +13,35 @@
             <Label Content="Enter positive integers:" />
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" Orientation="Vertical">
                     <Label Content="A side:" />
-                    <TextBox x:Name="NumberTextBox" Margin="5" Text="{Binding ASide}"/>
+                    <TextBox x:Name="NumberTextBox" Margin="5" Text="{Binding ASide}" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" Orientation="Vertical">
                     <Label Content="B side:" />
-                    <TextBox x:Name="NumberTextBox2" Margin="5" Text="{Binding BSide}"/>
+                    <TextBox x:Name="NumberTextBox2" Margin="5" Text="{Binding BSide}" />
                 </StackPanel>
-                <StackPanel  Grid.Column="2" Orientation="Vertical">
+                <StackPanel Grid.Column="2" Orientation="Vertical">
                     <Label Content="C side:" />
-                    <TextBox x:Name="NumberTextBox3" Margin="5" Text="{Binding CSide}"/>
+                    <TextBox x:Name="NumberTextBox3" Margin="5" Text="{Binding CSide}" />
                 </StackPanel>
-                <StackPanel  Grid.Column="3" Orientation="Vertical">
+                <StackPanel Grid.Column="3" Orientation="Vertical">
                     <Label Content="Perimeter:" />
-                    <TextBox x:Name="NumberTextBox4" Margin="5"  Text="{Binding Perimeter}"/>
+                    <TextBox x:Name="NumberTextBox4" Margin="5" Text="{Binding Perimeter}" />
                 </StackPanel>
-                <StackPanel  Grid.Column="4" Orientation="Vertical">
+                <StackPanel Grid.Column="4" Orientation="Vertical">
                     <Label Content="Area:" />
-                    <TextBox x:Name="NumberTextBox5" Margin="5"  Text="{Binding Area}"/>
+                    <TextBox x:Name="NumberTextBox5" Margin="5" Text="{Binding Area}" />
                 </StackPanel>
             </Grid>
-            <Button Content="Create triangle" Padding="10" HorizontalAlignment="Left" Margin="5" Command="{Binding calculate}" />
+            <Button Content="Create triangle" Padding="10" HorizontalAlignment="Left" Margin="5"
+                    Command="{Binding calculate}" />
         </StackPanel>
     </GroupBox>
 </UserControl>

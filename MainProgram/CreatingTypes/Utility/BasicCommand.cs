@@ -3,10 +3,10 @@ using System.Windows.Input;
 
 namespace MainProgram.Utility
 {
-    class BasicCommand : ICommand
+    internal class BasicCommand : ICommand
     {
-        private readonly Action<object> execute;
         private readonly Predicate<object> canExecute;
+        private readonly Action<object> execute;
 
         public BasicCommand(Action<object> execute, Predicate<object> canExecute = null)
         {
@@ -16,14 +16,8 @@ namespace MainProgram.Utility
 
         public event EventHandler CanExecuteChanged
         {
-            add
-            {
-                CommandManager.RequerySuggested += value;
-            }
-            remove
-            {
-                CommandManager.RequerySuggested -= value;
-            }
+            add => CommandManager.RequerySuggested += value;
+            remove => CommandManager.RequerySuggested -= value;
         }
 
         public bool CanExecute(object parameter)

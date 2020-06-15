@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyStream
+﻿namespace MyStream
 {
     //public delegate void InterceptStreamHandler(MethodBase method, params object[] arguments);
 

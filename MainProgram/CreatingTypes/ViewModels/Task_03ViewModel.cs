@@ -1,17 +1,28 @@
-﻿using MainProgram.Utility;
-using Newton;
-using System;
+﻿using System;
 using System.Windows;
+using MainProgram.Utility;
+using Newton;
 
 namespace MainProgram.ViewModels
 {
-    class Task_03ViewModel:BaseViewModel
+    internal class Task_03ViewModel : BaseViewModel
     {
-        public string RootNumber { get; set; } = "27";
-        public string RootDegree { get; set; } = "3";
+        private string binNetResult = "0";
+
+        private string binResult = "0";
 
         private string newtonResult = "0";
         private string powResult = "0";
+
+        public Task_03ViewModel()
+        {
+            BinCalculateCommand = new BasicCommand(BinCalculate);
+            RootCalculateCommand = new BasicCommand(RootCalculate);
+        }
+
+        public string RootNumber { get; set; } = "27";
+        public string RootDegree { get; set; } = "3";
+
         public string NewtonResult
         {
             get => newtonResult;
@@ -21,6 +32,7 @@ namespace MainProgram.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public string PowResult
         {
             get => powResult;
@@ -33,8 +45,6 @@ namespace MainProgram.ViewModels
 
         public string BinNumber { get; set; } = "12345";
 
-        private string binResult = "0";
-        private string binNetResult = "0";
         public string BinResult
         {
             get => binResult;
@@ -44,6 +54,7 @@ namespace MainProgram.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public string BinNetResult
         {
             get => binNetResult;
@@ -53,21 +64,17 @@ namespace MainProgram.ViewModels
                 OnPropertyChanged();
             }
         }
+
         public BasicCommand BinCalculateCommand { get; set; }
         public BasicCommand RootCalculateCommand { get; set; }
 
-        public Task_03ViewModel()
-        {
-            BinCalculateCommand = new BasicCommand(BinCalculate);
-            RootCalculateCommand = new BasicCommand(RootCalculate);
-        } 
         private void RootCalculate(object parameter)
         {
-            string valueFormatter = "{0:0.##}";
+            var valueFormatter = "{0:0.##}";
             try
             {
-                double number = double.Parse(RootNumber);
-                double degree = double.Parse(RootDegree);
+                var number = double.Parse(RootNumber);
+                var degree = double.Parse(RootDegree);
                 NewtonResult = string.Format(valueFormatter, NewtonMethods.Root(number, degree));
                 PowResult = string.Format(valueFormatter, Math.Pow(number, 1 / degree));
             }
@@ -81,7 +88,7 @@ namespace MainProgram.ViewModels
         {
             try
             {
-                uint number = uint.Parse(BinNumber);
+                var number = uint.Parse(BinNumber);
                 BinResult = BinFormatter.BinFormatter.IntToBinString(number);
                 BinNetResult = Convert.ToString(number, 2);
             }

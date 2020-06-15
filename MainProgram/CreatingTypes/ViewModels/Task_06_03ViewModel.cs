@@ -1,24 +1,28 @@
-﻿using Converter;
-using MainProgram.Utility;
-using System;
+﻿using System;
 using System.Windows;
+using Converter;
+using MainProgram.Utility;
 
 namespace MainProgram.ViewModels
 {
-    class Task_06_03ViewModel : BaseViewModel
+    internal class Task_06_03ViewModel : BaseViewModel
     {
+        public Task_06_03ViewModel()
+        {
+            CalculateCommand = new BasicCommand(Calculate);
+            ClearOutputCommand = new BasicCommand(obj =>
+            {
+                Output = string.Empty;
+                OnPropertyChanged(nameof(Output));
+            });
+        }
+
         public string Output { get; set; }
 
         public int ConvertersCount { get; set; } = 2;
 
         public BasicCommand CalculateCommand { get; set; }
         public BasicCommand ClearOutputCommand { get; set; }
-
-        public Task_06_03ViewModel()
-        {
-            CalculateCommand = new BasicCommand(Calculate);
-            ClearOutputCommand = new BasicCommand((obj) => { Output = string.Empty; OnPropertyChanged(nameof(Output)); });
-        }
 
         private void OutputWriteLine(string str)
         {
@@ -29,24 +33,25 @@ namespace MainProgram.ViewModels
         {
             try
             {
-                ProgramConverter[] programConverters = new ProgramConverter[ConvertersCount];
+                var programConverters = new ProgramConverter[ConvertersCount];
 
-                for (int i = 0; i < programConverters.Length / 2; i++)
+                for (var i = 0; i < programConverters.Length / 2; i++)
                     programConverters[i] = new ProgramConverter();
-                for (int i = programConverters.Length / 2; i < programConverters.Length; i++)
+                for (var i = programConverters.Length / 2; i < programConverters.Length; i++)
                     programConverters[i] = new ProgramHelper();
                 OutputWriteLine($"[0 - {-1 + programConverters.Length / 2}] elements is {nameof(ProgramConverter)}");
-                OutputWriteLine($"[{programConverters.Length / 2} - {programConverters.Length - 1}] elements is {nameof(ProgramHelper)}");
+                OutputWriteLine(
+                    $"[{programConverters.Length / 2} - {programConverters.Length - 1}] elements is {nameof(ProgramHelper)}");
                 OutputWriteLine(string.Empty);
 
                 const string vbCode = "var";
 
-                for (int i = 0; i < programConverters.Length; i++)
+                for (var i = 0; i < programConverters.Length; i++)
                 {
-                    ProgramConverter converter = programConverters[i];
+                    var converter = programConverters[i];
                     if (converter is ICodeChecker)
                     {
-                        ICodeChecker codeChecker = converter as ICodeChecker;
+                        var codeChecker = converter as ICodeChecker;
 
                         OutputWriteLine($"[{i}] is ICodeChecker");
 
@@ -69,6 +74,7 @@ namespace MainProgram.ViewModels
             {
                 MessageBox.Show(exception.Message);
             }
+
             OnPropertyChanged(nameof(Output));
         }
     }

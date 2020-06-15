@@ -4,15 +4,8 @@ namespace Vector
 {
     public class Vector3D
     {
-        public double X { get; private set; }
-        public double Y { get; private set; }
-        public double Z { get; private set; }
         /// <summary>
-        /// Calculates the length of the vector 'X ^ 2 + Y ^ 2 + Z ^ 2'
-        /// </summary>
-        public double Length { get => Math.Sqrt(X * X + Y * Y + Z * Z); }
-        /// <summary>
-        /// Creates a vector with coordinates X, Y, Z from the origin (0, 0, 0)
+        ///     Creates a vector with coordinates X, Y, Z from the origin (0, 0, 0)
         /// </summary>
         /// <param name="x"></param>
         /// <param name="y"></param>
@@ -23,15 +16,28 @@ namespace Vector
             Y = y;
             Z = z;
         }
+
+        public double X { get; }
+        public double Y { get; }
+        public double Z { get; }
+
         /// <summary>
-        /// This method forms a string representation of a vector in the format (X, Y, Z)
+        ///     Calculates the length of the vector 'X ^ 2 + Y ^ 2 + Z ^ 2'
+        /// </summary>
+        public double Length => Math.Sqrt(X * X + Y * Y + Z * Z);
+
+        /// <summary>
+        ///     This method forms a string representation of a vector in the format (X, Y, Z)
         /// </summary>
         /// <returns></returns>
-        public override string ToString() => $"({X}, {Y}, {Z})";
+        public override string ToString()
+        {
+            return $"({X}, {Y}, {Z})";
+        }
 
         public override bool Equals(object obj)
         {
-            return (obj is Vector3D) && Equals((Vector3D)obj);
+            return obj is Vector3D && Equals((Vector3D) obj);
         }
 
         public bool Equals(Vector3D vector)
@@ -71,7 +77,7 @@ namespace Vector
 
         public static Vector3D operator -(Vector3D v1, Vector3D v2)
         {
-            return v1 + (-v2);
+            return v1 + -v2;
         }
 
         public static Vector3D operator *(Vector3D v, double d)
@@ -93,8 +99,9 @@ namespace Vector
         {
             return new Vector3D(d / v.X, d / v.Y, d / v.Z);
         }
+
         /// <summary>
-        /// This method calculates the scalar product of two vectors
+        ///     This method calculates the scalar product of two vectors
         /// </summary>
         /// <param name="v1">First vector</param>
         /// <param name="v2">Second vector</param>
@@ -103,19 +110,19 @@ namespace Vector
         {
             return v1.X * v2.X + v1.Y * v2.Y + v1.Z * v2.Z;
         }
+
         /// <summary>
-        /// This method calculates the angle between two vectors
+        ///     This method calculates the angle between two vectors
         /// </summary>
         /// <param name="v1">First vector</param>
         /// <param name="v2">Second vector</param>
         /// <returns></returns>
         public static double Angle(Vector3D v1, Vector3D v2)
         {
-            double scalarProduct = ScalarProduct(v1, v2);
-            double v1Length = v1.Length;
-            double v2Length = v2.Length;
+            var scalarProduct = ScalarProduct(v1, v2);
+            var v1Length = v1.Length;
+            var v2Length = v2.Length;
             return Math.Acos(scalarProduct / v1Length / v2Length);
         }
-
     }
 }

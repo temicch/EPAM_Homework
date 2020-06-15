@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newton;
 
 namespace NewtonRoot_Tests
 {
     [TestClass]
     public class UnitTest1
     {
-        static double eps = 0.001;
+        private static readonly double eps = 0.001;
 
         [TestMethod]
         public void SqrtShouldBeEquivalentEvery100Element()
@@ -14,8 +15,8 @@ namespace NewtonRoot_Tests
             // Every 100th element
             for (double value = 1; value < int.MaxValue / 2; value += 100)
             {
-                double number = Newton.NewtonMethods.Root(value, 2);
-                double expected = Math.Pow(value, 1 / (double)2);
+                var number = NewtonMethods.Root(value, 2);
+                var expected = Math.Pow(value, 1 / (double) 2);
                 Assert.AreEqual(expected, number, eps);
             }
         }
@@ -26,8 +27,8 @@ namespace NewtonRoot_Tests
             // Every squad element
             for (double value = 1, i = 0; i < 64; value *= 2, i++)
             {
-                double number = Newton.NewtonMethods.Root(value, 2);
-                double expected = Math.Pow(value, 1 / (double)2);
+                var number = NewtonMethods.Root(value, 2);
+                var expected = Math.Pow(value, 1 / (double) 2);
                 Assert.AreEqual(expected, number, eps);
             }
         }

@@ -1,13 +1,18 @@
-﻿using MainProgram.Utility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using MainProgram.Utility;
 
 namespace MainProgram.ViewModels
 {
-    class Task_06_02ViewModel: BaseViewModel
+    internal class Task_06_02ViewModel : BaseViewModel
     {
+        public Task_06_02ViewModel()
+        {
+            CalculateCommand = new BasicCommand(obj => Calculate(obj));
+        }
+
         public double A1 { get; set; } = 1;
         public double B1 { get; set; } = 2;
         public double C1 { get; set; } = 3;
@@ -27,17 +32,12 @@ namespace MainProgram.ViewModels
 
         public BasicCommand CalculateCommand { get; set; }
 
-        public Task_06_02ViewModel()
-        {
-            CalculateCommand = new BasicCommand((obj) => Calculate(obj));
-        }
-
         public void Calculate(object obj)
         {
             try
             {
-                var polynomial1 = new Polynomial.Polynomial(new List<double> { A1, B1, C1 });
-                var polynomial2 = new Polynomial.Polynomial(new List<double> { A2, B2, C2 });
+                var polynomial1 = new Polynomial.Polynomial(new List<double> {A1, B1, C1});
+                var polynomial2 = new Polynomial.Polynomial(new List<double> {A2, B2, C2});
 
                 Polynomial1 = PolynomialInfo(polynomial1, D1, X1);
                 Polynomial2 = PolynomialInfo(polynomial2, D2, X2);
@@ -52,12 +52,11 @@ namespace MainProgram.ViewModels
             {
                 MessageBox.Show(exception.Message);
             }
-
         }
 
         private string OutputInfo(Polynomial.Polynomial polynomial1, Polynomial.Polynomial polynomial2)
         {
-            StringBuilder output = new StringBuilder();
+            var output = new StringBuilder();
             output.Append($"{polynomial1} + {polynomial2} = {polynomial1 + polynomial2}\n");
             output.Append($"{polynomial1} - {polynomial2} = {polynomial1 - polynomial2}\n\n");
             //output.Append($"The angle between the vectors: {Vector3D.Angle(polynomial1, polynomial2)}\n");
@@ -67,13 +66,12 @@ namespace MainProgram.ViewModels
 
         private string PolynomialInfo(Polynomial.Polynomial polynomial, double D, double x)
         {
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             result.Append($"f(x) = {polynomial}\n\n");
             result.Append($"f({x}) = {polynomial.GetSolution(x)}\n\n");
             result.Append($"f'(x) = {polynomial.Derivative()}\n\n");
             result.Append($"({polynomial}) * {D} = {polynomial * D}\n");
             return result.ToString();
         }
-
     }
 }

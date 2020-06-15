@@ -6,7 +6,7 @@ namespace Converter
     {
         public bool CheckCodeSyntax(string code, Language type)
         {
-            switch(type)
+            switch (type)
             {
                 case Language.CSharp_Code:
                     return IsCSharpCode(code);
