@@ -7,7 +7,7 @@ namespace Polynomial
 {
     public class Polynomial
     {
-        private List<double> _array;
+        private readonly List<double> array;
 
         /// <summary>
         /// Initializes a new polynomial with a given enumeration of coefficients
@@ -15,7 +15,7 @@ namespace Polynomial
         /// <param name="arrayCoefficients">Enumeration of coefficients</param>
         public Polynomial(IEnumerable<double> arrayCoefficients)
         {
-            _array = new List<double>(arrayCoefficients.Reverse());
+            array = new List<double>(arrayCoefficients.Reverse());
         }
 
         /// <summary>
@@ -24,10 +24,10 @@ namespace Polynomial
         /// <param name="headPow">Highest Polynomial Degree</param>
         public Polynomial(int headPow)
         {
-            _array = new List<double>(headPow);
+            array = new List<double>(headPow);
 
             for (int i = 0; i < headPow; i++)
-                _array.Add(0D);
+                array.Add(0D);
         }
 
         /// <summary>
@@ -39,28 +39,28 @@ namespace Polynomial
         {
             get
             {
-                if (i < 0 || i >= _array.Count)
+                if (i < 0 || i >= array.Count)
                     throw new IndexOutOfRangeException();
-                return _array[i];
+                return array[i];
             }
 
             set
             {
-                if (i < 0 || i >= _array.Count)
+                if (i < 0 || i >= array.Count)
                     throw new IndexOutOfRangeException();
-                _array[i] = value;
+                array[i] = value;
             }
         }
 
         /// <summary>
         /// Highest Polynomial Degree
         /// </summary>
-        public int HeadPow => _array.Count;
+        public int HeadPow => array.Count;
 
         /// <summary>
         /// Enumeration of coefficients
         /// </summary>
-        public IEnumerable<double> Coefficients => _array;
+        public IEnumerable<double> Coefficients => array;
 
         public static Polynomial operator +(Polynomial poly1, Polynomial poly2)
         {
@@ -101,7 +101,6 @@ namespace Polynomial
         public static Polynomial operator *(Polynomial poly1, Polynomial poly2)
         {
             Polynomial resultPoly = new Polynomial(poly1.HeadPow + poly2.HeadPow - 1);
-            resultPoly._array.Select(x => 0);
 
             for (int i = 0; i < poly1.HeadPow; i++)
                 for (int j = 0; j < poly2.HeadPow; j++)
@@ -121,10 +120,10 @@ namespace Polynomial
             for (int i = 0; i < HeadPow - 1; i++)
                 result[i] = result[i + 1] * (i + 1);
 
-            result._array.RemoveAt(result.HeadPow - 1);
+            result.array.RemoveAt(result.HeadPow - 1);
 
-            if (result._array.Count == 0) 
-                result._array.Add(0);
+            if (result.array.Count == 0) 
+                result.array.Add(0);
 
             return result;
         }

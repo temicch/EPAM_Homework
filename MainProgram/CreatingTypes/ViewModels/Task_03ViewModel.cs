@@ -2,7 +2,6 @@
 using Newton;
 using System;
 using System.Windows;
-using System.Windows.Input;
 
 namespace MainProgram.ViewModels
 {
@@ -59,8 +58,8 @@ namespace MainProgram.ViewModels
 
         public Task_03ViewModel()
         {
-            BinCalculateCommand = new BasicCommand((obj) => BinCalculate(obj));
-            RootCalculateCommand = new BasicCommand((obj) => RootCalculate(obj));
+            BinCalculateCommand = new BasicCommand(BinCalculate);
+            RootCalculateCommand = new BasicCommand(RootCalculate);
         } 
         private void RootCalculate(object parameter)
         {

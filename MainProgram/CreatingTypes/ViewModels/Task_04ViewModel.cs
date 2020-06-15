@@ -1,13 +1,8 @@
-﻿using Euclidean;
-using LiveCharts;
+﻿using LiveCharts;
 using LiveCharts.Wpf;
 using MainProgram.Utility;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -69,15 +64,7 @@ namespace MainProgram.ViewModels
                 return _calculateGcd;
             }
         }
-        public ICommand calculateWatchers
-        {
-            get
-            {
-                if (_calculateWatchers == null)
-                    _calculateWatchers = new BasicCommand(CalculateWatchers);
-                return _calculateWatchers;
-            }
-        }
+        public ICommand calculateWatchers => _calculateWatchers ?? (_calculateWatchers = new BasicCommand(CalculateWatchers));
 
         public Task_04ViewModel()
         {
@@ -178,10 +165,9 @@ namespace MainProgram.ViewModels
 
             SeriesCollection.Clear();
 
-            Series series;
-
             foreach (var array in values)
             {
+                Series series;
                 if (isHorisontal == true)
                     series = new ColumnSeries();
                 else
