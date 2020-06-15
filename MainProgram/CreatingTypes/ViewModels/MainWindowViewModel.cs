@@ -1,6 +1,5 @@
 ﻿using MainProgram.Utility;
 using MainProgram.Views;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
@@ -10,7 +9,7 @@ namespace MainProgram.ViewModels
 {
     class MainWindowViewModel : BaseViewModel
     {
-        MainWindow window = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
+        readonly MainWindow window = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
 
         Dictionary<string, ContentControl> views;
 
@@ -20,38 +19,41 @@ namespace MainProgram.ViewModels
 
         public MainWindowViewModel()
         {
-            OpenViewCommand = new BasicCommand((obj) => OpenView(obj));
+            OpenViewCommand = new BasicCommand(OpenView);
             InitViewModels();
         }
 
         private void InitViewModels()
         {
-            views = new Dictionary<string, ContentControl>();
-            views["01 Unit tests"] = null;
-            views["02 Resource management. Garbage collector"] = null;
-            views["03 Basic C # programming constructs"] = new Task_03View();
-            views["04 Declaring and calling methods in C #"] = new Task_04View();
-            views["05 Creating New Types in C #"] = new Task_05View();
-            views["06 (01) Encapsulation. Overload operations. Inheritance. Interfaces and Abstract Classes"] = new Task_06_01View();
-            views["06 (02) Encapsulation. Overload operations. Inheritance. Interfaces and Abstract Classes"] = new Task_06_02View();
-            views["07 Exception Handling"] = null;
-            views["08 Delegates and Events"] = null;
-            views["09 Collections and Generic Types"] = null;
-            views["10 LINQ Introduction"] = null;
-            views["11 Streams and IO"] = null;
-            views["12 XML Technologies"] = null;
-            views["13 ADO.NET EF"] = null;
-            views["14 Internal device types in .NET Framework. Resource management"] = null;
-            views["15 Web Development Fundamentals"] = null;
-            views["16 Database. Additional materials"] = null;
-            views["17 Multithreading and asynchrony"] = null;
-            views["18 Serialization"] = null;
-            views["19 Web development (optional)"] = null;
-            views["20 Reflection and Dependency Injection"] = null;
-            views["21 Patterns and SOLID Principles"] = null;
-            views["22 Continuous integration"] = null;
-            views["23 Development methodologies"] = null;
-            views["24 WCF Development Fundamentals"] = null;
+            views = new Dictionary<string, ContentControl>
+            {
+                ["01 Unit tests"] = null,
+                ["02 Resource management. Garbage collector"] = null,
+                ["03 Basic C # programming constructs"] = new Task_03View(),
+                ["04 Declaring and calling methods in C #"] = new Task_04View(),
+                ["05 Creating New Types in C #"] = new Task_05View(),
+                ["06 (01) Encapsulation. Overload operations"] = new Task_06_01View(),
+                ["06 (02) Encapsulation. Overload operations"] = new Task_06_02View(),
+                ["06 (03) Inheritance. Interfaces and Abstract Classes"] = new Task_06_03View(),
+                ["07 Exception Handling"] = null,
+                ["08 Delegates and Events"] = null,
+                ["09 Collections and Generic Types"] = null,
+                ["10 LINQ Introduction"] = null,
+                ["11 Streams and IO"] = null,
+                ["12 XML Technologies"] = null,
+                ["13 ADO.NET EF"] = null,
+                ["14 Internal device types in .NET Framework. Resource management"] = null,
+                ["15 Web Development Fundamentals"] = null,
+                ["16 Database. Additional materials"] = null,
+                ["17 Multithreading and asynchrony"] = null,
+                ["18 Serialization"] = null,
+                ["19 Web development (optional)"] = null,
+                ["20 Reflection and Dependency Injection"] = null,
+                ["21 Patterns and SOLID Principles"] = null,
+                ["22 Continuous integration"] = null,
+                ["23 Development methodologies"] = null,
+                ["24 WCF Development Fundamentals"] = null
+            };
 
             OnPropertyChanged(nameof(ViewsList));
         }

@@ -92,9 +92,13 @@
     <Compile Include="Utility\BaseViewModel.cs" />
     <Compile Include="Utility\BasicCommand.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="ViewModels\Task_06_03ViewModel.cs" />
     <Compile Include="ViewModels\Task_06_02ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_06_03View.xaml.cs">
+      <DependentUpon>Task_06_03View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +148,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_06_03View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -176,6 +184,10 @@
     <ProjectReference Include="..\Models\BinFormatter\BinFormatter.csproj">
       <Project>{b17d55f5-f76d-4d9d-a293-ee2c1db75a9f}</Project>
       <Name>BinFormatter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Converter\Converter.csproj">
+      <Project>{63fad863-c572-4d6b-ab94-9c1a1ce8276b}</Project>
+      <Name>Converter</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Euclidean\Euclidean.csproj">
       <Project>{145858E4-4FAC-475B-B8E7-4E1E5104F820}</Project>
