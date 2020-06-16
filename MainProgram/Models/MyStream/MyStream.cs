@@ -1,5 +1,6 @@
 ﻿namespace MyStream
 {
+#warning Not implemented
     //public delegate void InterceptStreamHandler(MethodBase method, params object[] arguments);
 
     //public class MyStream : Stream
