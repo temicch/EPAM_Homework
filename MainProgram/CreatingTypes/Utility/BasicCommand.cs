@@ -22,7 +22,7 @@ namespace MainProgram.Utility
 
         public bool CanExecute(object parameter)
         {
-            return canExecute == null ? true : canExecute(parameter);
+            return canExecute?.Invoke(parameter) ?? true;
         }
 
         public void Execute(object execute)
