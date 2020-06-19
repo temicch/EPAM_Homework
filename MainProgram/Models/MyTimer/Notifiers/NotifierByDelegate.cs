@@ -2,24 +2,21 @@
 
 namespace MyTimer
 {
-    public delegate void TaskStarted(string name, int seconds);
+    public delegate void TimerStarted(string name, int seconds);
 
-    public class NotifierByDelegate : ICutDownNotifier
+    public class NotifierByDelegate : Notifier
     {
-        private readonly Action<string, int> timerFinishedDelegate;
-
-        private readonly TaskStarted timerStartedDelegate;
-        private MyTimer timer;
-
-        public Action<string, int> TimerTickDelegate;
-
-        public NotifierByDelegate(TaskStarted timerStarted, Action<string, int> timerFinished)
+        /// <summary>
+        ///     Creates an event handler with the specified <see langword="delegates" />
+        /// </summary>
+        /// <param name="timerStarted">A delegate representing a method to be executed when timer will start.</param>
+        /// <param name="timerFinished">A delegate representing a method to be executed when timer will be finished.</param>
+        public NotifierByDelegate(TimerStarted timerStarted, Action<string, int> timerFinished) : base(timerStarted,
+            timerFinished)
         {
-            timerStartedDelegate = timerStarted;
-            timerFinishedDelegate = timerFinished;
         }
 
-        public void Init(MyTimer myTimer)
+        public override void Init(MyTimer myTimer)
         {
             timer = myTimer;
             timer.TimerStarted += delegate(MyTimer argTimer)
@@ -34,11 +31,6 @@ namespace MyTimer
             {
                 TimerTickDelegate?.Invoke(argTimer.Name, argTimer.Seconds);
             };
-        }
-
-        public void Run()
-        {
-            timer?.Start();
         }
     }
 }

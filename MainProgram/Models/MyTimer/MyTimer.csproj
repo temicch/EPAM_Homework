@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Notifiers\ICutDownNotifier.cs" />
     <Compile Include="MyTimer.cs" />
+    <Compile Include="Notifiers\Notifier.cs" />
     <Compile Include="Notifiers\NotifierByDelegate.cs" />
     <Compile Include="Notifiers\NotifierByLambda.cs" />
     <Compile Include="Notifiers\NotifierByMethod.cs" />

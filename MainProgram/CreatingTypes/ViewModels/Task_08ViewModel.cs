@@ -49,14 +49,14 @@ namespace MainProgram.ViewModels
 
         private async void ExecuteTimer()
         {
-            TaskStarted taskStarted = (name, seconds) => OutputWriteLine($"'{name}' started for {seconds} seconds.");
-            Action<string, int> taskFinished = (name, seconds) => OutputWriteLine($"'{name}' finished.");
+            TimerStarted timerStarted = (name, seconds) => OutputWriteLine($"'{name}' started for {seconds} seconds.");
+            Action<string, int> timerFinished = (name, seconds) => OutputWriteLine($"'{name}' finished.");
 
             ICutDownNotifier[] notifiers = new ICutDownNotifier[]
             {
-                new NotifierByDelegate(taskStarted, taskFinished),
-                new NotifierByLambda(taskStarted, taskFinished),
-                new NotifierByMethod(taskStarted, taskFinished),
+                new NotifierByDelegate(timerStarted, timerFinished),
+                new NotifierByLambda(timerStarted, timerFinished),
+                new NotifierByMethod(timerStarted, timerFinished),
             };
 
             notifiers[0].Init(new MyTimer.MyTimer("Чтение задания", TimerSeconds));

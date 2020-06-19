@@ -2,32 +2,24 @@
 
 namespace MyTimer
 {
-    public class NotifierByMethod : ICutDownNotifier
+    public class NotifierByMethod : Notifier
     {
-        private readonly Action<string, int> timerFinishedDelegate;
-
-        private readonly TaskStarted timerStartedDelegate;
-        private MyTimer timer;
-
-        public Action<string, int> TimerTickDelegate;
-
-        public NotifierByMethod(TaskStarted timerStarted, Action<string, int> timerFinished)
+        /// <summary>
+        ///     Creates an event handler with the specified <see langword="delegates" />
+        /// </summary>
+        /// <param name="timerStarted">A delegate representing a method to be executed when timer will start.</param>
+        /// <param name="timerFinished">A delegate representing a method to be executed when timer will be finished.</param>
+        public NotifierByMethod(TimerStarted timerStarted, Action<string, int> timerFinished) : base(timerStarted,
+            timerFinished)
         {
-            timerStartedDelegate = timerStarted;
-            timerFinishedDelegate = timerFinished;
         }
 
-        public void Init(MyTimer myTimer)
+        public override void Init(MyTimer myTimer)
         {
             timer = myTimer;
             timer.TimerStarted += OnTimerStarted;
             timer.TimerFinished += OnTimerFinished;
             timer.TimerTick += OnTimerTick;
-        }
-
-        public void Run()
-        {
-            timer?.Start();
         }
 
         private void OnTimerStarted(MyTimer myTimer)
