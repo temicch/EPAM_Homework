@@ -71,6 +71,7 @@
     <Compile Include="ViewModels\Task_06_03ViewModel.cs" />
     <Compile Include="ViewModels\Task_06_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_08ViewModel.cs" />
+    <Compile Include="ViewModels\Task_09_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_09_01ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
@@ -83,6 +84,9 @@
     </Compile>
     <Compile Include="Views\Task_09_01View.xaml.cs">
       <DependentUpon>Task_09_01View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_09_02View.xaml.cs">
+      <DependentUpon>Task_09_02View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -144,6 +148,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_09_02View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -173,6 +181,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Models\AbstractFactory\AbstractFactory.csproj">
+      <Project>{1cd2cb84-710a-4da1-a908-be235b1aea38}</Project>
+      <Name>AbstractFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\BinFormatter\BinFormatter.csproj">
       <Project>{b17d55f5-f76d-4d9d-a293-ee2c1db75a9f}</Project>
       <Name>BinFormatter</Name>
