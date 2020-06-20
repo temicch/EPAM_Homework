@@ -4,7 +4,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vms="clr-namespace:MainProgram.ViewModels"
-             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d">
     <UserControl.DataContext>
         <vms:Task_09_01ViewModel />
@@ -13,18 +12,18 @@
         <Grid>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
                 <GroupBox Header="Strings (Added in random order, displayed in sorted reverse state)" Grid.Row="0">
-                    <ListView ItemsSource="{Binding Strings}"/>
+                    <ListView ItemsSource="{Binding Strings}" />
                 </GroupBox>
                 <GroupBox Header="Students (Added in reverse order, displayed in sorted state)" Grid.Row="1">
-                    <ListView ItemsSource="{Binding Students}"/>
+                    <ListView ItemsSource="{Binding Students}" />
                 </GroupBox>
                 <GroupBox Header="Digits (Added in reverse order, displayed in sorted reverse state)" Grid.Row="2">
-                    <ListView ItemsSource="{Binding Digits}"/>
+                    <ListView ItemsSource="{Binding Digits}" />
                 </GroupBox>
             </Grid>
         </Grid>

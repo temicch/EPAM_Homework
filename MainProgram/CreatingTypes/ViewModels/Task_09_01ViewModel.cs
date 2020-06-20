@@ -9,17 +9,13 @@ namespace MainProgram.ViewModels
 {
     internal class Task_09_01ViewModel : BaseViewModel
     {
-        public int[] Digits => digitsTree.ToArray();
-        public string[] Students => studentsTree.Select(x => x.ToString()).ToArray();
-        public string[] Strings => stringsTree.GetReversedEnumerator().ToArray();
-
         private readonly BinarySearchTree<int> digitsTree;
-        private readonly BinarySearchTree<IStudentTestResult> studentsTree;
         private readonly BinarySearchTree<string> stringsTree;
+        private readonly BinarySearchTree<IStudentTestResult> studentsTree;
 
         public Task_09_01ViewModel()
         {
-            Random rand = new Random();
+            var rand = new Random();
 
             digitsTree = new BinarySearchTree<int>(Enumerable
                 .Repeat(0, 10)
@@ -31,7 +27,7 @@ namespace MainProgram.ViewModels
                 new StudentTest("EGE", "Bogdanova Elena", DateTime.Now, rand.Next(0, 100)),
                 new StudentTest("EGE", "Percev Aleksandr", DateTime.Now, rand.Next(0, 100)),
                 new StudentTest("EGE", "Gorelov Nikita", DateTime.Now, rand.Next(0, 100)),
-                new StudentTest("EGE", "Velikaya Ariana", DateTime.Now, rand.Next(0, 100)),
+                new StudentTest("EGE", "Velikaya Ariana", DateTime.Now, rand.Next(0, 100))
             }, Comparer<IStudentTestResult>.Create((x, y) => y.Score - x.Score));
             stringsTree = new BinarySearchTree<string>(new[]
             {
@@ -44,5 +40,9 @@ namespace MainProgram.ViewModels
             OnPropertyChanged(nameof(Strings));
             OnPropertyChanged(nameof(Students));
         }
+
+        public int[] Digits => digitsTree.ToArray();
+        public string[] Students => studentsTree.Select(x => x.ToString()).ToArray();
+        public string[] Strings => stringsTree.GetReversedEnumerator().ToArray();
     }
 }

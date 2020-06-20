@@ -6,7 +6,7 @@ using MyTimer;
 
 namespace MainProgram.ViewModels
 {
-    internal class Task_08ViewModel: BaseViewModel
+    internal class Task_08ViewModel : BaseViewModel
     {
         public Task_08ViewModel()
         {
@@ -16,7 +16,6 @@ namespace MainProgram.ViewModels
                 Output = string.Empty;
                 OnPropertyChanged(nameof(Output));
             });
-
         }
 
         public string Output { get; set; } = string.Empty;
@@ -52,18 +51,18 @@ namespace MainProgram.ViewModels
             TimerStarted timerStarted = (name, seconds) => OutputWriteLine($"'{name}' started for {seconds} seconds.");
             Action<string, int> timerFinished = (name, seconds) => OutputWriteLine($"'{name}' finished.");
 
-            ICutDownNotifier[] notifiers = new ICutDownNotifier[]
+            ICutDownNotifier[] notifiers =
             {
                 new NotifierByDelegate(timerStarted, timerFinished),
                 new NotifierByLambda(timerStarted, timerFinished),
-                new NotifierByMethod(timerStarted, timerFinished),
+                new NotifierByMethod(timerStarted, timerFinished)
             };
 
             notifiers[0].Init(new MyTimer.MyTimer("Чтение задания", TimerSeconds));
             notifiers[1].Init(new MyTimer.MyTimer("Выполнение задания", TimerSeconds));
             notifiers[2].Init(new MyTimer.MyTimer("Проверка задания перед отправкой", TimerSeconds));
 
-            foreach(var notifier in notifiers)
+            foreach (var notifier in notifiers)
                 await Task.Run(() => notifier.Run());
         }
     }
