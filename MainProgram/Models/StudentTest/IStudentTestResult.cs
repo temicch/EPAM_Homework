@@ -7,6 +7,6 @@ namespace TestResult
         string TestTitle { get; }
         string StudentName { get; }
         DateTime TestDate { get; }
-        short Score { get; }
+        int Score { get; }
     }
 }

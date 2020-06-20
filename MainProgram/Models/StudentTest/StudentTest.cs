@@ -4,7 +4,7 @@ namespace TestResult
 {
     public class StudentTest : IStudentTestResult
     {
-        public StudentTest(string testTitle, string studentName, DateTime testDate, short score)
+        public StudentTest(string testTitle, string studentName, DateTime testDate, int score)
         {
             TestTitle = testTitle;
             StudentName = studentName;
@@ -17,7 +17,7 @@ namespace TestResult
         public string StudentName { get; set; }
         public DateTime TestDate { get; }
 
-        public short Score { get; }
+        public int Score { get; }
 
         public int CompareTo(IStudentTestResult other)
         {
