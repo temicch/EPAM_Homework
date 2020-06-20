@@ -10,7 +10,7 @@
     <UserControl.DataContext>
         <vms:Task_06_02ViewModel />
     </UserControl.DataContext>
-    <GroupBox Grid.Row="0" Header="Vector" Padding="5">
+    <GroupBox Header="Polynomial" Padding="5">
         <StackPanel Orientation="Vertical">
             <Label Content="Enter the coefficients of the polynomial 'ax + bx + c':" />
             <GroupBox Header="Polynomial 1">
