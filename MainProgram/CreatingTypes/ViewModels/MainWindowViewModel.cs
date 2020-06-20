@@ -37,7 +37,8 @@ namespace MainProgram.ViewModels
                 ["06 (03) Inheritance. Interfaces and Abstract Classes"] = new Task_06_03View(),
                 //["07 Exception Handling"] = null,
                 ["08 Delegates and Events"] = new Task_08View(),
-                ["09 Collections and Generic Types"] = new Task_09_01View(),
+                ["09 (01) Collections and Generic Types"] = new Task_09_01View(),
+                ["09 (02) Abstract factory"] = new Task_09_02View()
                 //["10 LINQ Introduction"] = null,
                 //["11 Streams and IO"] = null,
                 //["12 XML Technologies"] = null,

@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="MainProgram.Views.Task_09_02View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vms="clr-namespace:MainProgram.ViewModels"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vms:Task_09_02ViewModel />
+    </UserControl.DataContext>
+    <GroupBox Header="Abstract factory" Padding="5">
+        <TextBlock Text="{Binding Output}" />
+    </GroupBox>
+</UserControl>
