@@ -137,6 +137,26 @@ namespace BinaryTree
             return new BSTReversedIterator(Root);
         }
 
+        /// <summary>Returns an enumerator that iterates over a collection in reverse order.</summary>
+        /// <returns>An enumerator that can be used to iterate over a collection in reverse order.</returns>
+        public IEnumerable<T> GetReversedEnumeratorYield()
+        {
+            var stack = new Stack<Node<T>>();
+
+            PushToStack(Root, stack, false);
+
+            while (stack.Count > 0)
+            {
+                var node = stack.Pop();
+                if (node == null)
+                    continue;
+
+                yield return node.Data;
+
+                PushToStack(node.LeftNode, stack, false);
+            }
+        }
+
         private Node<T> Remove(Node<T> parent, T item, ref bool isNodeDeleted)
         {
             if (parent == null)
