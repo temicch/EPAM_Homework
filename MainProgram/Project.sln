@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTree", "Models\BST\Bi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentTest", "Models\StudentTest\StudentTest.csproj", "{DB757174-796F-4A58-A04F-DF995B6BC053}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AbstractFactory", "Models\AbstractFactory\AbstractFactory.csproj", "{1CD2CB84-710A-4DA1-A908-BE235B1AEA38}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -161,6 +163,10 @@ Global
 		{DB757174-796F-4A58-A04F-DF995B6BC053}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB757174-796F-4A58-A04F-DF995B6BC053}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB757174-796F-4A58-A04F-DF995B6BC053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD2CB84-710A-4DA1-A908-BE235B1AEA38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD2CB84-710A-4DA1-A908-BE235B1AEA38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD2CB84-710A-4DA1-A908-BE235B1AEA38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD2CB84-710A-4DA1-A908-BE235B1AEA38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -197,6 +203,7 @@ Global
 		{2B46D7D5-4212-43DB-9FB5-94CF68F33A23} = {2084F69E-8DAB-4DB0-9FC8-611D46607844}
 		{061B57B8-2866-4FF3-9C7D-4B6999D4759D} = {2B46D7D5-4212-43DB-9FB5-94CF68F33A23}
 		{DB757174-796F-4A58-A04F-DF995B6BC053} = {2B46D7D5-4212-43DB-9FB5-94CF68F33A23}
+		{1CD2CB84-710A-4DA1-A908-BE235B1AEA38} = {2B46D7D5-4212-43DB-9FB5-94CF68F33A23}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BD76A27B-B598-4EA4-9F37-78E581460016}
