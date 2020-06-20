@@ -2,13 +2,18 @@
 {
     public class Client
     {
-        public IProductA ProductA;
-        public IProductB ProductB;
+        private readonly IProductA productA;
+        private readonly IProductB productB;
 
         public Client(IFactory factory)
         {
-            ProductA = factory.CreateProductA();
-            ProductB = factory.CreateProductB();
+            productA = factory.CreateProductA();
+            productB = factory.CreateProductB();
+        }
+
+        public string GetProductsInfo()
+        {
+            return $"{productA.Name} {productA.Parent}\n{productB.Name} {productB.Parent}";
         }
     }
 }
