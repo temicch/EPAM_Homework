@@ -8,7 +8,7 @@
     <UserControl.DataContext>
         <vms:Task_09_01ViewModel />
     </UserControl.DataContext>
-    <GroupBox Header="Timer" Padding="5">
+    <GroupBox Header="Binary tree" Padding="5">
         <Grid>
             <Grid>
                 <Grid.RowDefinitions>
