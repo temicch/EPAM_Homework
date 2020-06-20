@@ -160,7 +160,7 @@ namespace BinaryTree
         private Node<T> Remove(Node<T> parent, T item, ref bool isNodeDeleted)
         {
             if (parent == null)
-                return parent;
+                return null;
 
             if (comparer.Compare(item, parent.Data) < 0)
             {
@@ -225,10 +225,8 @@ namespace BinaryTree
                 before = after;
                 if (comparer.Compare(after.Data, item) > 0)
                     after = after.LeftNode;
-                else if (comparer.Compare(after.Data, item) < 0)
-                    after = after.RightNode;
                 else
-                    return;
+                    after = after.RightNode;
             }
 
             var newNode = new Node<T>
