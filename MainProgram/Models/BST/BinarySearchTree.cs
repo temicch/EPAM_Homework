@@ -13,25 +13,57 @@ namespace BinaryTree
         public T Data { get; set; }
     }
 
+    /// <summary>
+    ///     Represents a strongly typed collection of objects in which objects are stored as a binary search tree. Provides
+    ///     methods for finding and managing a collection.
+    /// </summary>
+    /// <typeparam name="T">The type of elements in the collection.</typeparam>
     public class BinarySearchTree<T> : ICollection<T> where T : IComparable<T>
     {
         private readonly IComparer<T> comparer;
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="T:BinaryTree.BinarySearchTree`1" /> class that is empty and has the
+        ///     default initial capacity.
+        /// </summary>
         public BinarySearchTree()
         {
             Count = 0;
             comparer = Comparer<T>.Default;
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="T:BinaryTree.BinarySearchTree`1" /> class with a custom
+        ///     comparator.
+        /// </summary>
+        /// <param name="comparer">Custom comparator for comparing items.</param>
         public BinarySearchTree(IComparer<T> comparer) : this()
         {
             this.comparer = comparer ?? Comparer<T>.Default;
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="T:BinaryTree.BinarySearchTree`1" /> class that contains elements
+        ///     copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// </summary>
+        /// <param name="collection">The collection whose elements are copied to the new collection.</param>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="collection" /> is <see langword="null" />.
+        /// </exception>
         public BinarySearchTree(IEnumerable<T> collection) : this(collection, null)
         {
         }
 
+        /// <summary>
+        ///     Initializes a new instance of the <see cref="T:BinaryTree.BinarySearchTree`1" /> class that contains elements
+        ///     copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. Has
+        ///     a custom comparator
+        /// </summary>
+        /// <param name="collection">The collection whose elements are copied to the new collection.</param>
+        /// <param name="comparer">Custom comparator for comparing items.</param>
+        /// <exception cref="T:System.ArgumentNullException">
+        ///     <paramref name="collection" /> is <see langword="null" />.
+        /// </exception>
         public BinarySearchTree(IEnumerable<T> collection, IComparer<T> comparer) : this(comparer)
         {
             if (collection == null)
