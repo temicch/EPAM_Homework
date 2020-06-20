@@ -41,12 +41,14 @@ namespace Matrix
             : this(message, null, firstMatrixSize, secondMatrixSize)
         {
         }
+
         /// <summary>
-        /// Sizement of the first matrix
+        ///     Sizement of the first matrix
         /// </summary>
         public MatrixSize FirstMatrixSize { get; }
+
         /// <summary>
-        /// Sizement of the second matrix
+        ///     Sizement of the second matrix
         /// </summary>
         public MatrixSize SecondMatrixSize { get; }
     }
