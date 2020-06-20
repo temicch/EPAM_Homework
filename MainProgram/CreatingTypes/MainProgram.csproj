@@ -71,6 +71,7 @@
     <Compile Include="ViewModels\Task_06_03ViewModel.cs" />
     <Compile Include="ViewModels\Task_06_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_08ViewModel.cs" />
+    <Compile Include="ViewModels\Task_09_01ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
     </Compile>
@@ -79,6 +80,9 @@
     </Compile>
     <Compile Include="Views\Task_08View.xaml.cs">
       <DependentUpon>Task_08View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_09_01View.xaml.cs">
+      <DependentUpon>Task_09_01View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +140,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_09_01View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -169,6 +177,10 @@
       <Project>{b17d55f5-f76d-4d9d-a293-ee2c1db75a9f}</Project>
       <Name>BinFormatter</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\BST\BinaryTree.csproj">
+      <Project>{061b57b8-2866-4ff3-9c7d-4b6999d4759d}</Project>
+      <Name>BinaryTree</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Converter\Converter.csproj">
       <Project>{63fad863-c572-4d6b-ab94-9c1a1ce8276b}</Project>
       <Name>Converter</Name>
@@ -192,6 +204,10 @@
     <ProjectReference Include="..\Models\Polynomial\Polynomial.csproj">
       <Project>{81b403b6-26dd-4a02-a64e-2a5da781bedc}</Project>
       <Name>Polynomial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\StudentTest\StudentTest.csproj">
+      <Project>{db757174-796f-4a58-a04f-df995b6bc053}</Project>
+      <Name>StudentTest</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Vector3D\3DVector.csproj">
       <Project>{b8d580ef-1daa-462c-8238-24cebad86034}</Project>
