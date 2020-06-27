@@ -16,13 +16,13 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <GroupBox Header="Strings (Added in random order, displayed in sorted reverse state)" Grid.Row="0">
+                <GroupBox Header="Strings (Added in random order, displayed in sorted (desc) state)" Grid.Row="0">
                     <ListView ItemsSource="{Binding Strings}" />
                 </GroupBox>
-                <GroupBox Header="Students (Added in reverse order, displayed in sorted state)" Grid.Row="1">
+                <GroupBox Header="Students (Added in reverse order, displayed in sorted (desc by score) state)" Grid.Row="1">
                     <ListView ItemsSource="{Binding Students}" />
                 </GroupBox>
-                <GroupBox Header="Digits (Added in reverse order, displayed in sorted reverse state)" Grid.Row="2">
+                <GroupBox Header="Digits (Added in reverse order, displayed in sorted (desc) state)" Grid.Row="2">
                     <ListView ItemsSource="{Binding Digits}" />
                 </GroupBox>
             </Grid>
