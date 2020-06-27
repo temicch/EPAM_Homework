@@ -18,7 +18,7 @@ namespace BinaryTree
     ///     methods for finding and managing a collection.
     /// </summary>
     /// <typeparam name="T">The type of elements in the collection.</typeparam>
-    public class BinarySearchTree<T> : ICollection<T> where T : IComparable<T>
+    public class BinarySearchTree<T> : ICollection<T>
     {
         private readonly IComparer<T> comparer;
 
