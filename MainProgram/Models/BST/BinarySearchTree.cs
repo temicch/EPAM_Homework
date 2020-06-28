@@ -134,7 +134,7 @@ namespace BinaryTree
             var stack = new Stack<Node<T>>();
             var node = Root;
 
-            PushToStack(node, stack);
+            stack.PushAllNodes(node);
             while (stack.Count > 0)
             {
                 node = stack.Pop();
@@ -144,22 +144,13 @@ namespace BinaryTree
 
                 yield return node.Data;
                 node = node.RightNode;
-                PushToStack(node, stack);
+                stack.PushAllNodes(node);
             }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-
-        internal static void PushToStack(Node<T> node, Stack<Node<T>> stack, bool inOrder = true)
-        {
-            while (node != null)
-            {
-                stack.Push(node);
-                node = inOrder ? node.LeftNode : node.RightNode;
-            }
         }
 
         /// <summary>Returns an enumerator that iterates over a collection in reverse order.</summary>
@@ -175,7 +166,7 @@ namespace BinaryTree
         {
             var stack = new Stack<Node<T>>();
 
-            PushToStack(Root, stack, false);
+            stack.PushAllNodes(Root, false);
 
             while (stack.Count > 0)
             {
@@ -185,7 +176,7 @@ namespace BinaryTree
 
                 yield return node.Data;
 
-                PushToStack(node.LeftNode, stack, false);
+                stack.PushAllNodes(node.LeftNode, false);
             }
         }
 
@@ -290,7 +281,7 @@ namespace BinaryTree
             {
                 stack = new Stack<Node<T>>();
 
-                PushToStack(root, stack, false);
+                stack.PushAllNodes(root, false);
             }
 
             public T Current => currentItem.Data;
@@ -305,7 +296,7 @@ namespace BinaryTree
                 if (node == null)
                     return false;
 
-                PushToStack(node.LeftNode, stack, false);
+                stack.PushAllNodes(node.LeftNode, false);
 
                 currentItem = node;
                 return true;
@@ -332,6 +323,24 @@ namespace BinaryTree
             }
 
             #endregion
+        }
+    }
+    static class StackExtension
+    {
+        /// <summary>
+        /// Push all left / right elements of the node into the stack
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="stack"></param>
+        /// <param name="node"></param>
+        /// <param name="inOrder">If 'true' then all left nodes will be added to the stack. Otherwise all left</param>
+        public static void PushAllNodes<T>(this Stack<Node<T>> stack, Node<T> node, bool inOrder = true)
+        {
+            while (node != null)
+            {
+                stack.Push(node);
+                node = inOrder ? node.LeftNode : node.RightNode;
+            }
         }
     }
 }
