@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace BinaryTree
 {
+    [Serializable]
     internal class Node<T>
     {
         public Node<T> LeftNode { get; set; }
@@ -18,6 +19,7 @@ namespace BinaryTree
     ///     methods for finding and managing a collection.
     /// </summary>
     /// <typeparam name="T">The type of elements in the collection.</typeparam>
+    [Serializable]
     public class BinarySearchTree<T> : ICollection<T>
     {
         private readonly IComparer<T> comparer;

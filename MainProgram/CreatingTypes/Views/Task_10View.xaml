@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="MainProgram.Views.Task_10View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vms="clr-namespace:MainProgram.ViewModels"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vms:Task_10ViewModel />
+    </UserControl.DataContext>
+    <GroupBox Header="LINQ" Padding="5">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Count to show:"/>
+                <mah:NumericUpDown Value="{Binding CountToShow}" Minimum="0"/>
+                <CheckBox Content="Is desc" Margin="16,0,0,0" IsChecked="{Binding IsDesc}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding Tests}" />
+        </StackPanel>
+    </GroupBox>
+</UserControl>

@@ -73,6 +73,7 @@
     <Compile Include="ViewModels\Task_08ViewModel.cs" />
     <Compile Include="ViewModels\Task_09_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_09_01ViewModel.cs" />
+    <Compile Include="ViewModels\Task_10ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
     </Compile>
@@ -87,6 +88,9 @@
     </Compile>
     <Compile Include="Views\Task_09_02View.xaml.cs">
       <DependentUpon>Task_09_02View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_10View.xaml.cs">
+      <DependentUpon>Task_10View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -152,6 +156,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_10View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -184,6 +192,10 @@
     <ProjectReference Include="..\Models\AbstractFactory\AbstractFactory.csproj">
       <Project>{1cd2cb84-710a-4da1-a908-be235b1aea38}</Project>
       <Name>AbstractFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\BinaryFileWriter\BinarySerializer.csproj">
+      <Project>{6e7fa0d1-e173-406c-bb78-d52d8fd0178d}</Project>
+      <Name>BinarySerializer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\BinFormatter\BinFormatter.csproj">
       <Project>{b17d55f5-f76d-4d9d-a293-ee2c1db75a9f}</Project>
@@ -220,6 +232,10 @@
     <ProjectReference Include="..\Models\StudentTest\StudentTest.csproj">
       <Project>{db757174-796f-4a58-a04f-df995b6bc053}</Project>
       <Name>StudentTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\TestsStorage\TestsStorage.csproj">
+      <Project>{4B008406-6930-45CE-A38E-6BFEACFDE609}</Project>
+      <Name>TestsStorage</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Vector3D\3DVector.csproj">
       <Project>{b8d580ef-1daa-462c-8238-24cebad86034}</Project>
