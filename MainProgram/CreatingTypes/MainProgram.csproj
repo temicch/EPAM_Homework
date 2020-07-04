@@ -51,6 +51,9 @@
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xaml">
@@ -74,6 +77,8 @@
     <Compile Include="ViewModels\Task_09_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_09_01ViewModel.cs" />
     <Compile Include="ViewModels\Task_10ViewModel.cs" />
+    <Compile Include="ViewModels\Task_11_01ViewModel.cs" />
+    <Compile Include="ViewModels\Task_11_02ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
     </Compile>
@@ -91,6 +96,12 @@
     </Compile>
     <Compile Include="Views\Task_10View.xaml.cs">
       <DependentUpon>Task_10View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_11_01View.xaml.cs">
+      <DependentUpon>Task_11_01View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_11_02View.xaml.cs">
+      <DependentUpon>Task_11_02View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -160,6 +171,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_11_01View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Task_11_02View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -213,6 +232,10 @@
       <Project>{145858E4-4FAC-475B-B8E7-4E1E5104F820}</Project>
       <Name>Euclidean</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\FileEditor\FileEditor.csproj">
+      <Project>{798ea8c2-9445-4ebf-98ec-9ba9649e2540}</Project>
+      <Name>FileEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\MyShapes\MyShapes.csproj">
       <Project>{1b36a88e-3c73-480b-aa45-febb575e9079}</Project>
       <Name>MyShapes</Name>
@@ -236,6 +259,10 @@
     <ProjectReference Include="..\Models\TestsStorage\TestsStorage.csproj">
       <Project>{4B008406-6930-45CE-A38E-6BFEACFDE609}</Project>
       <Name>TestsStorage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\TextEditor\TextEditor.csproj">
+      <Project>{e0cc6b6d-f0d7-48b1-846b-4886cb27e372}</Project>
+      <Name>TextEditor</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Vector3D\3DVector.csproj">
       <Project>{b8d580ef-1daa-462c-8238-24cebad86034}</Project>
