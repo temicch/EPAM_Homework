@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyTimer
+namespace MyTimer.Notifiers
 {
     public class NotifierByLambda : Notifier
     {

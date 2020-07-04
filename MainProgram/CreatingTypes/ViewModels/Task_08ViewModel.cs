@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using MainProgram.Utility;
 using MyTimer;
+using MyTimer.Notifiers;
 
 namespace MainProgram.ViewModels
 {

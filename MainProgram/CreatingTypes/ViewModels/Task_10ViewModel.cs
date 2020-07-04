@@ -1,12 +1,16 @@
-﻿using MainProgram.Utility;
-using System.Text;
+﻿using System.Text;
+using MainProgram.Utility;
 
 namespace MainProgram.ViewModels
 {
     internal class Task_10ViewModel : BaseViewModel
     {
-        private const string filePath = "testsResult.bin";
-        private TestsStorage.TestsStorage testsStorage = new TestsStorage.TestsStorage(filePath);
+        private const string FilePath = "testsResult.bin";
+        private readonly TestsStorage.TestsStorage testsStorage = new TestsStorage.TestsStorage(FilePath);
+
+        private int countToShow = 10;
+
+        private bool isDesc;
 
         public Task_10ViewModel()
         {
@@ -15,7 +19,6 @@ namespace MainProgram.ViewModels
             ShowTests();
         }
 
-        private bool isDesc = false;
         public bool IsDesc
         {
             get => isDesc;
@@ -28,7 +31,6 @@ namespace MainProgram.ViewModels
             }
         }
 
-        private int countToShow = 10;
         public int CountToShow
         {
             get => countToShow;
@@ -40,6 +42,7 @@ namespace MainProgram.ViewModels
                 ShowTests();
             }
         }
+
         public StringBuilder Tests { get; set; }
 
         private void ShowTests()
@@ -51,6 +54,5 @@ namespace MainProgram.ViewModels
                 Tests.AppendLine(record.ToString());
             OnPropertyChanged(nameof(Tests));
         }
-
     }
 }

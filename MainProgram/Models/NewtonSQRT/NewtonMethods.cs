@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Newton
+namespace NewtonSQRT
 {
     public static class NewtonMethods
     {

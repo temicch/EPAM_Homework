@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyTimer
+namespace MyTimer.Notifiers
 {
     public delegate void TimerStarted(string name, int seconds);
 

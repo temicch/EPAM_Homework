@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using MainProgram.Utility;
-using Newton;
+using NewtonSQRT;
 
 namespace MainProgram.ViewModels
 {

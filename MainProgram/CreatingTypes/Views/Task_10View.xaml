@@ -12,9 +12,9 @@
     <GroupBox Header="LINQ" Padding="5">
         <StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Label Content="Count to show:"/>
-                <mah:NumericUpDown Value="{Binding CountToShow}" Minimum="0"/>
-                <CheckBox Content="Is desc" Margin="16,0,0,0" IsChecked="{Binding IsDesc}"/>
+                <Label Content="Count to show:" />
+                <mah:NumericUpDown Value="{Binding CountToShow}" Minimum="0" />
+                <CheckBox Content="Is desc" Margin="16,0,0,0" IsChecked="{Binding IsDesc}" />
             </StackPanel>
             <TextBlock Text="{Binding Tests}" />
         </StackPanel>
