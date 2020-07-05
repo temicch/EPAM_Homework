@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="MainProgram.Views.Task_12View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vms="clr-namespace:MainProgram.ViewModels"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <vms:Task_12ViewModel />
+    </UserControl.DataContext>
+    <GroupBox Margin="5" Header="Xml">
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="Open">
+                    <MenuItem Header="File" Command="{Binding OpenFilesCommand}"/>
+                    <MenuItem Header="Folder" Command="{Binding OpenDirectoryCommand}"/>
+                </MenuItem>
+            </Menu>
+            <TextBox Text="{Binding XPathExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Top"/>
+            <TextBox VerticalScrollBarVisibility="Auto" Text="{Binding Output}" DockPanel.Dock="Top"/>
+        </DockPanel>
+    </GroupBox>
+</UserControl>

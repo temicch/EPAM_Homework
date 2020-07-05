@@ -41,8 +41,8 @@ namespace MainProgram.ViewModels
                 ["09 (02) Abstract factory"] = new Task_09_02View(),
                 ["10 LINQ Introduction"] = new Task_10View(),
                 ["11 (01) Garbage collector"] = new Task_11_01View(),
-                ["11 (02) Streams and IO"] = new Task_11_02View()
-                //["12 XML Technologies"] = null,
+                ["11 (02) Streams and IO"] = new Task_11_02View(),
+                ["12 XML Technologies"] = new Task_12View(),
                 //["13 ADO.NET EF"] = null,
                 //["14 Internal device types in .NET Framework. Resource management"] = null,
                 //["15 Web Development Fundamentals"] = null,
