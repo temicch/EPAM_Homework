@@ -1,6 +1,5 @@
 ﻿using NLog;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,9 +11,22 @@ namespace Task12
 {
     public static class XmlParser
     {
+        private static ParallelOptions parallelOptions;
+
+        public static readonly int MaxThreads;
+
         public const string MissingNode = "N/A";
 #warning Not implemented
         private static Logger logger = LogManager.GetCurrentClassLogger();
+
+        static XmlParser()
+        {
+            MaxThreads = -1;
+            parallelOptions = new ParallelOptions() 
+            { 
+                MaxDegreeOfParallelism = MaxThreads 
+            };
+        }
 
         public static IDictionary<string, int> EvaluateFile(string filePath, string xpathExpression)
         {
@@ -29,7 +41,7 @@ namespace Task12
         {
             IDictionary<string, int> result = CreateDictionary();
 
-            Parallel.ForEach(files, (filePath) =>
+            Parallel.ForEach(files, parallelOptions,  (filePath) =>
             {
                 ParseFile(filePath, xpathExpression, ref result);
             });
@@ -59,7 +71,7 @@ namespace Task12
 
         private static IDictionary<string, int> CreateDictionary()
         {
-            return new ConcurrentDictionary<string, int>();
+            return new Dictionary<string, int>();
         }
 
         private static void GetOccurrences(string xpathExpression, IDictionary<string, int> result, XPathNavigator navigator, XmlNamespaceManager nsmgr)

@@ -17,7 +17,14 @@
                     <MenuItem Header="Folder" Command="{Binding OpenDirectoryCommand}"/>
                 </MenuItem>
             </Menu>
-            <TextBox Text="{Binding XPathExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DockPanel.Dock="Top"/>
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="XPath expression:"/>
+                <TextBox Grid.Column="1" Text="{Binding XPathExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
             <TextBox VerticalScrollBarVisibility="Auto" Text="{Binding Output}" DockPanel.Dock="Top"/>
         </DockPanel>
     </GroupBox>
