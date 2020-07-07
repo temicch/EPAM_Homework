@@ -88,6 +88,7 @@
     <Compile Include="ViewModels\Task_11_01ViewModel.cs" />
     <Compile Include="ViewModels\Task_11_02ViewModel.cs" />
     <Compile Include="ViewModels\Task_12ViewModel.cs" />
+    <Compile Include="ViewModels\Task_13ViewModel.cs" />
     <Compile Include="Views\Task_06_02View.xaml.cs">
       <DependentUpon>Task_06_02View.xaml</DependentUpon>
     </Compile>
@@ -114,6 +115,9 @@
     </Compile>
     <Compile Include="Views\Task_12View.xaml.cs">
       <DependentUpon>Task_12View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Task_13View.xaml.cs">
+      <DependentUpon>Task_13View.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\Task_03View.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Task_13View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -271,6 +279,10 @@
     <ProjectReference Include="..\Models\StudentTest\StudentTest.csproj">
       <Project>{db757174-796f-4a58-a04f-df995b6bc053}</Project>
       <Name>StudentTest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Study\Study.csproj">
+      <Project>{b2962095-8dab-4694-9555-4d8b64b13876}</Project>
+      <Name>Study</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\TestsStorage\TestsStorage.csproj">
       <Project>{4B008406-6930-45CE-A38E-6BFEACFDE609}</Project>

@@ -43,7 +43,7 @@ namespace MainProgram.ViewModels
                 ["11 (01) Garbage collector"] = new Task_11_01View(),
                 ["11 (02) Streams and IO"] = new Task_11_02View(),
                 ["12 XML Technologies"] = new Task_12View(),
-                //["13 ADO.NET EF"] = null,
+                ["13 ADO.NET EF"] = new Task_13View(),
                 //["14 Internal device types in .NET Framework. Resource management"] = null,
                 //["15 Web Development Fundamentals"] = null,
                 //["16 Database. Additional materials"] = null,
