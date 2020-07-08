@@ -47,9 +47,9 @@ namespace Study
             return attendanceDBDAL.InsertStudent(studentName);
         }
 
-        public int AddAttendance(string studentName, DateTime date, int mark)
+        public int AddAttendance(int studentId, int lectureId, int mark)
         {
-            return attendanceDBDAL.MarkAttendance(studentName, date, mark);
+            return attendanceDBDAL.MarkAttendance(studentId, lectureId, mark);
         }
 
         public void SetDefaultStructure()

@@ -51,10 +51,10 @@
             </GroupBox>
             <GroupBox Header="Attend attendance" Margin="4" Grid.Row="3" Grid.Column="2">
                 <DockPanel LastChildFill="False">
-                    <Label Content="Student name:" DockPanel.Dock="Top"/>
-                    <TextBox Text="{Binding AttendanceStudentName}" DockPanel.Dock="Top"/>
-                    <Label Content="Date:" DockPanel.Dock="Top"/>
-                    <DatePicker SelectedDate="{Binding AttendanceDate}" DockPanel.Dock="Top"/>
+                    <Label Content="Student id:" DockPanel.Dock="Top"/>
+                    <mah:NumericUpDown Value="{Binding AttendanceStudentId}" DockPanel.Dock="Top"/>
+                    <Label Content="Lecture id:" DockPanel.Dock="Top"/>
+                    <mah:NumericUpDown Value="{Binding AttendanceLectureId}" DockPanel.Dock="Top"/>
                     <Label Content="Mark:" DockPanel.Dock="Top"/>
                     <TextBox Text="{Binding AttendanceMark}" DockPanel.Dock="Top"/>
                     <Button Content="Add" Command="{Binding AddAttendanceCommand}" DockPanel.Dock="Bottom"/>

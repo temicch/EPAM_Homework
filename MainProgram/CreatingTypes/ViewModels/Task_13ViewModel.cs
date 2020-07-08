@@ -22,8 +22,8 @@ namespace MainProgram.ViewModels
         public DateTime LectureDate { get; set; }
         public string LectureTopic { get; set; }
 
-        public string AttendanceStudentName { get; set; }
-        public DateTime AttendanceDate { get; set; }
+        public int AttendanceStudentId { get; set; }
+        public int AttendanceLectureId { get; set; }
         public int AttendanceMark { get; set; }
 
         public Task_13ViewModel()
@@ -73,7 +73,7 @@ namespace MainProgram.ViewModels
 
         private void AddAttendance(object obj)
         {
-            InformationData.AddAttendance(AttendanceStudentName, AttendanceDate, AttendanceMark);
+            InformationData.AddAttendance(AttendanceStudentId, AttendanceLectureId, AttendanceMark);
             ReloadTables(null);
         }
 
@@ -84,8 +84,8 @@ namespace MainProgram.ViewModels
             LectureDate = DateTime.Now;
             LectureTopic = "ADO .NET";
 
-            AttendanceStudentName = "Ivanov Liev";
-            AttendanceDate = DateTime.Now;
+            AttendanceStudentId = 1;
+            AttendanceLectureId = 1;
             AttendanceMark = 5;
         }
 

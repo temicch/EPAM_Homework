@@ -45,7 +45,7 @@ namespace Study
             }
         }
 
-        public int MarkAttendance(string studentName, DateTime date, int mark)
+        public int MarkAttendance(int studentId, int lectureId, int mark)
         {
             using (SqlCommand procedureCommand = CreateDefaultCommand("MarkAttendance"))
             {
@@ -53,8 +53,8 @@ namespace Study
 
                 return ExecuteCommand(procedureCommand, new Dictionary<string, object>
                 {
-                    ["@StudentName"] = studentName,
-                    ["@LectureDate"] = date,
+                    ["@StudentId"] = studentId,
+                    ["@LectureId"] = lectureId,
                     ["@Mark"] = mark,
                 });
             }
